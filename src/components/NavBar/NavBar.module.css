@@ -1,0 +1,56 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.stickyTop {
+  @supports (position: sticky) {
+    position: sticky;
+    top: 2.5rem;
+    z-index: 1;
+  }
+}
+
+.navLogo {
+  font-family: "Quicksand", sans-serif;
+  font-style: normal;
+  line-height: normal;
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-900);
+}
+
+.navLink {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  line-height: normal;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-900);
+}
+
+.navLinkContainer,
+.navLeftContainer,
+.navRightContainer {
+  display: flex;
+  align-items: center;
+}
+
+.navLinkContainer {
+  gap: 5rem;
+}
+
+.navLeftContainer {
+  gap: 12.75rem;
+}
+
+.navRightContainer {
+  gap: 1.5rem;
+}
