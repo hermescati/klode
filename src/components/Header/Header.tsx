@@ -1,30 +1,27 @@
-import "./Header.css";
 import { Category } from "../../hooks/useCategories";
-import Dropdown from "../Dropdown/Dropdown";
+import "./Header.css";
 
 interface Props {
-  selectedCategory: Category;
+  selectedCategory: Category | null;
 }
 
 const Header = ({ selectedCategory }: Props) => {
-  const sortItems = [
-    "Alphabetical A-Z",
-    "Alphabetical Z-A",
-    "Price Ascending",
-    "Price Descending",
-  ];
-
   return (
-    <div className="cat-container">
-      <div>
-        <p className="cat-header">{selectedCategory?.title}</p>
-        <p className="cat-description">{selectedCategory?.description}</p>
-      </div>
-      {/* <div>
-        <Dropdown text="Sort Products" items={sortItems} />
-        <p className="cat-description">showing 4 out 4 products</p>
-      </div> */}
-    </div>
+    <>
+      {selectedCategory !== null ? (
+        <div className="col">
+          <h1 className="heading">{selectedCategory.title}</h1>
+          <p className="description">{selectedCategory.description}</p>
+        </div>
+      ) : (
+        <div className="col">
+          <h1 className="heading">All Products</h1>
+          <p className="description">
+            Explore our wide range of products from different categories.
+          </p>
+        </div>
+      )}
+    </>
   );
 };
 

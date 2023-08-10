@@ -14,7 +14,7 @@ export interface Product {
 }
 
 const useProducts = (productQuery: ProductQuery) => {
-  const { category, searchText } = productQuery;
+  const { category, searchText, sortOption } = productQuery;
 
   let filteredProducts = products;
 
@@ -28,6 +28,22 @@ const useProducts = (productQuery: ProductQuery) => {
     filteredProducts = filteredProducts.filter((product) =>
       product.name.toLowerCase().includes(searchText.toLowerCase())
     );
+  }
+
+  if (sortOption) {
+    if (sortOption.name === "Alphabetical A-Z") {
+      filteredProducts = filteredProducts.sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+    } else if (sortOption.name === "Alphabetical Z-A") {
+      filteredProducts = filteredProducts.sort((a, b) =>
+        b.name.localeCompare(a.name)
+      );
+    } else if (sortOption.name === "Price Ascending") {
+      filteredProducts = filteredProducts.sort((a, b) => a.price - b.price);
+    } else if (sortOption.name === "Price Descending") {
+      filteredProducts = filteredProducts.sort((a, b) => b.price - a.price);
+    }
   }
 
   return { data: filteredProducts };

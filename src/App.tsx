@@ -1,28 +1,35 @@
-import { useState } from "react";
-import "./App.css";
-import Header from "./components/Header";
 import NavBar from "./components/NavBar";
+import Header from "./components/Header";
 import ProductGrid from "./components/ProductGrid";
-import useCategories, { Category } from "./hooks/useCategories";
 import Footer from "./components/Footer";
+import Dropdown, { SelectItem } from "./components/Dropdown";
+import { useState } from "react";
+import { Category } from "./hooks/useCategories";
+import "./App.css";
 
 export interface ProductQuery {
-  category: Category;
+  category: Category | null;
   searchText: string;
+  sortOption: SelectItem | null;
 }
 
 function App() {
-  const { data } = useCategories();
-  const defaultCategory = data[0];
-
   const [productQuery, setProductQuery] = useState<ProductQuery>({
-    category: defaultCategory,
+    category: null,
     searchText: "",
+    sortOption: null,
   });
+
+  const optionsList: SelectItem[] = [
+    { id: 1, name: "Alphabetical A-Z" },
+    { id: 2, name: "Alphabetical Z-A" },
+    { id: 3, name: "Price Ascending" },
+    { id: 4, name: "Price Descending" },
+  ];
 
   return (
     <>
-      {/* <div>
+      {/* <div className="main-grid">
         <NavBar
           selectedCategory={productQuery.category}
           onSelectCategory={(category) =>
@@ -32,7 +39,13 @@ function App() {
             setProductQuery({ ...productQuery, searchText })
           }
         />
-        <div className="filter" />
+        <Dropdown
+          defaultText="Sort products"
+          items={optionsList}
+          onSelectItem={(sortOption) => {
+            setProductQuery({ ...productQuery, sortOption });
+          }}
+        />
         <Header selectedCategory={productQuery.category} />
         <ProductGrid productQuery={productQuery} />
       </div> */}

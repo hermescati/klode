@@ -3,11 +3,11 @@ import "./Badge.css";
 
 interface Props {
   children: ReactNode;
-  color?: "normal" | "rating" | "danger";
+  color?: "rating" | "danger";
 }
 
-const Badge = ({ children, color = "normal" }: Props) => {
-  return <div className={"badge-" + color}>{children}</div>;
+const Badge = ({ children, color = "danger" }: Props) => {
+  return <div className={"row badge-" + color}>{children}</div>;
 };
 
 export default Badge;

@@ -1,7 +1,7 @@
-import "./ProductGrid.css";
 import useProducts from "../../hooks/useProducts";
 import ProductCard from "../ProductCard";
 import { ProductQuery } from "../../App";
+import "./ProductGrid.css";
 
 interface Props {
   productQuery: ProductQuery;

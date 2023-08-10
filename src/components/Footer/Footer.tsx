@@ -1,5 +1,5 @@
-import "./Footer.css";
 import { FaCcMastercard, FaCcVisa, FaCcPaypal } from "react-icons/fa";
+import "./Footer.css";
 
 const Footer = () => {
   return (

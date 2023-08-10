@@ -7,7 +7,7 @@ import useCategories, { Category } from "../../hooks/useCategories";
 
 interface Props {
   onSearch: (serachText: string) => void;
-  selectedCategory: Category;
+  selectedCategory: Category | null;
   onSelectCategory: (category: Category) => void;
 }
 
