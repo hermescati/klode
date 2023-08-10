@@ -44,8 +44,16 @@
   flex-wrap: wrap;
 }
 
-.center {
+.center,
+.center-between {
   align-items: center;
-  justify-content: space-between;
   width: 100%;
+}
+
+.center {
+  justify-content: center;
+}
+
+.center-between {
+  justify-content: space-between;
 }

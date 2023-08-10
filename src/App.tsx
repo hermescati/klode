@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import ProductGrid from "./components/ProductGrid";
 import useCategories, { Category } from "./hooks/useCategories";
+import Footer from "./components/Footer";
 
 export interface ProductQuery {
   category: Category;
@@ -35,6 +36,7 @@ function App() {
         <Header selectedCategory={productQuery.category} />
         <ProductGrid productQuery={productQuery} />
       </div> */}
+      <Footer />
     </>
   );
 }

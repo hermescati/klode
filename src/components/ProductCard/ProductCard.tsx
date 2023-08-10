@@ -27,7 +27,7 @@ const ProductCard = ({ product }: Props) => {
       <div className="col card-body">
         <p className="product-title">{product.name}</p>
         <p className="product-description">{product.description}</p>
-        <div className="row center">
+        <div className="row center-between">
           <div className="col price-wrapper">
             {isDiscounted && (
               <p className="product-discount">

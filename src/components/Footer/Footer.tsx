@@ -1,47 +1,72 @@
-import styles from "./Footer.module.css";
+import "./Footer.css";
 import { FaCcMastercard, FaCcVisa, FaCcPaypal } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <>
-      <div className={styles.footer}>
-        <div className="row">
-          <div className="col">
-            <div className="row">klode.</div>
-            <div className="row">
+      <div className="footer">
+        <div className="row-flex footer-links">
+          <div className="col footer-container">
+            <h1 className="footer-logo">klode.</h1>
+            <p className="footer-slogan">
               Specialists in providing high-quality, stylish products for your
               wardrobe
+            </p>
+          </div>
+          <div className="col footer-container">
+            <h4 className="footer-header">Shop</h4>
+            <div className="col footer-wrapper">
+              <a href="/collections">
+                <p className="footer-item">All Collections</p>
+              </a>
+              <a href="/summer">
+                <p className="footer-item">Summer Edition</p>
+              </a>
+              <a href="/discounts">
+                <p className="footer-item">Discounts</p>
+              </a>
             </div>
           </div>
-          <div className="col">
-            <div className="row">SHOP</div>
-            <div className="row">All Collections</div>
-            <div className="row">Summer Edition</div>
-            <div className="row">Discounts</div>
+          <div className="col footer-container">
+            <h4 className="footer-header">Company</h4>
+            <div className="col footer-wrapper">
+              <a href="/about">
+                <p className="footer-item">About Us</p>
+              </a>
+              <a href="/contact">
+                <p className="footer-item">Contact</p>
+              </a>
+              <a href="/affiliates">
+                <p className="footer-item">Affiliates</p>
+              </a>
+            </div>
           </div>
-          <div className="col">
-            <div className="row">COMPANY</div>
-            <div className="row">About Us</div>
-            <div className="row">Contact</div>
-            <div className="row">Affiliates</div>
+          <div className="col footer-container">
+            <h4 className="footer-header">Privacy</h4>
+            <div className="col footer-wrapper">
+              <a href="/terms">
+                <p className="footer-item">Terms of use</p>
+              </a>
+              <a href="/cookies">
+                <p className="footer-item">Cookie Policy</p>
+              </a>
+            </div>
           </div>
-          <div className="col">
-            <div className="row">SUPPORT</div>
-            <div className="row">FAQs</div>
-            <div className="row">Cookie Policy</div>
-            <div className="row">Terms of Use</div>
-          </div>
-          <div className="col">
-            <div className="row">PAYMENT METHODS</div>
-            <div className="row d-flex">
-              <FaCcMastercard size="24px" />
-              <FaCcVisa size="24px" />
-              <FaCcPaypal size="24px" />
+          <div className="col footer-container">
+            <h4 className="footer-header">Payment Methods</h4>
+            <div className="row payment-wrapper">
+              <FaCcMastercard size="24" color="#1d242d" />
+              <FaCcVisa size="24" color="#1d242d" />
+              <FaCcPaypal size="24" color="#1d242d" />
             </div>
           </div>
         </div>
-        <div className="row">DIVIDER</div>
-        <div className="row">Copyrights ©2023 klode. All rights reserved.</div>
+        <hr className="divider"></hr>
+        <div className="row-flex center">
+          <p className="footer-copyright">
+            Copyrights ©{new Date().getFullYear()} klode. All rights reserved.
+          </p>
+        </div>
       </div>
     </>
   );

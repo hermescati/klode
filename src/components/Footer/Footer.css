@@ -1,0 +1,85 @@
+.footer {
+  padding: 4rem 8.5rem 2.5rem;
+  background-color: var(--color-200);
+}
+
+.divider {
+  margin: 2.5rem 0rem;
+  border: 1px solid rgba(190, 199, 208, 0.5) !important;
+  border-radius: 0.5rem;
+}
+
+.footer-links {
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  gap: 2rem;
+}
+
+.footer-container {
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.footer-wrapper {
+  gap: 0.5rem;
+}
+
+.payment-wrapper {
+  gap: 1rem;
+}
+
+.footer-logo {
+  color: var(--color-700);
+  font-family: var(--quicksand);
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.footer-header {
+  color: var(--color-700);
+  font-family: var(--open-sans);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.footer-item,
+.footer-slogan,
+.footer-copyright {
+  color: var(--color-400);
+  font-family: var(--open-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+.footer-item:hover {
+  color: var(--color-700);
+}
+
+a {
+  text-decoration: none;
+}
+
+.footer-slogan {
+  max-width: 20.86rem;
+}
+
+.payments {
+  size: 56px;
+  color: var(--color-800);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 4rem 4rem 2rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .footer {
+    padding: 3rem 3rem 2rem;
+  }
+}
