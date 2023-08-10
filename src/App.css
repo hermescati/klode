@@ -1,0 +1,10 @@
+.main-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.filter {
+  height: 200px;
+  width: 200px;
+}

@@ -1,35 +1,40 @@
-import Footer from "./components/Footer";
+import { useState } from "react";
+import "./App.css";
+import Header from "./components/Header";
 import NavBar from "./components/NavBar";
-import ProductCard from "./components/ProductCard";
-import { Product } from "./components/ProductCard/ProductCard";
+import ProductGrid from "./components/ProductGrid";
+import useCategories, { Category } from "./hooks/useCategories";
+
+export interface ProductQuery {
+  category: Category;
+  searchText: string;
+}
 
 function App() {
-  const product: Product = {
-    image:
-      "https://lovingitvegan.com/wp-content/uploads/2019/02/Vegan-Tacos-15.jpg",
-    name: "Vegan Tacos",
-    description:
-      "Crispy tacos with zuccini, beans and pico the gallo, topped with vegan cheese.",
-    rating: 5.9,
-    price: 84.99,
-    discount: 0.2,
-  };
+  const { data } = useCategories();
+  const defaultCategory = data[0];
+
+  const [productQuery, setProductQuery] = useState<ProductQuery>({
+    category: defaultCategory,
+    searchText: "",
+  });
 
   return (
     <>
-      <div className="pt-5 ps-5 pe-5">
-        <NavBar />
-        <div className="row mt-5">
-          <div className="col-3">
-            <p>Filter</p>
-          </div>
-          <div className="col">
-            {" "}
-            <ProductCard product={product}></ProductCard>
-          </div>
-        </div>
-      </div>
-      <Footer />
+      {/* <div>
+        <NavBar
+          selectedCategory={productQuery.category}
+          onSelectCategory={(category) =>
+            setProductQuery({ ...productQuery, category })
+          }
+          onSearch={(searchText) =>
+            setProductQuery({ ...productQuery, searchText })
+          }
+        />
+        <div className="filter" />
+        <Header selectedCategory={productQuery.category} />
+        <ProductGrid productQuery={productQuery} />
+      </div> */}
     </>
   );
 }

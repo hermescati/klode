@@ -1,11 +1,13 @@
-import styles from "./Badge.module.css";
+import { ReactNode } from "react";
+import "./Badge.css";
 
 interface Props {
-  children: string;
+  children: ReactNode;
+  color?: "normal" | "rating" | "danger";
 }
 
-const Badge = ({ children }: Props) => {
-  return <div className={styles.badge}>{children}</div>;
+const Badge = ({ children, color = "normal" }: Props) => {
+  return <div className={"badge-" + color}>{children}</div>;
 };
 
 export default Badge;

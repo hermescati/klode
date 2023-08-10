@@ -1,19 +1,15 @@
 import { ReactNode } from "react";
-import styles from "./Button.module.css";
+import "./Button.css";
 
 interface Props {
   children: ReactNode;
-  color?: "Primary" | "Secondary";
+  color?: "primary" | "secondary";
   disabled?: boolean;
 }
 
-const Button = ({ children, color = "Primary", disabled = false }: Props) => {
+const Button = ({ children, color = "primary", disabled = false }: Props) => {
   return (
-    <button
-      type="button"
-      disabled={disabled}
-      className={[styles.btn, styles["btn" + color]].join(" ")}
-    >
+    <button type="button" disabled={disabled} className={"btn btn-" + color}>
       {children}
     </button>
   );

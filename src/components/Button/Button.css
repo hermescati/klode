@@ -7,52 +7,50 @@
   border: 0;
   border-radius: 0.5rem;
   outline-offset: 0.125rem;
-  font-family: "Open Sans", sans-serif;
-  font-style: normal;
-  line-height: normal;
-  font-size: 1.125rem;
+  font-family: var(--open-sans);
+  font-size: 1.05rem;
   font-weight: 700;
 }
 
-.btnPrimary {
+.btn-primary {
   color: var(--color-50);
   background: var(--color-800);
   box-shadow: 0px 0px 8px 0px rgba(29, 36, 45, 0.75);
 }
-.btnPrimary:hover {
+.btn-primary:hover {
   background: var(--color-900);
   transition: 0.75s;
 }
-.btnPrimary:active {
+.btn-primary:active {
   background: var(--color-800);
   transition: 0.75s;
 }
-.btnPrimary:focus {
+.btn-primary:focus {
   outline: 0.125rem solid var(--color-800);
   transition: 0.075s;
 }
 
-.btnSecondary {
+.btn-secondary {
   color: var(--color-600);
   background: var(---color-50);
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
 }
-.btnSecondary:hover {
+.btn-secondary:hover {
   color: var(--color-50);
   background: var(--color-600);
   transition: 0.75s;
 }
-.btnSecondary:active {
+.btn-secondary:active {
   color: var(--color-600);
   background: var(---color-50);
   transition: 0.75s;
 }
-.btnSecondary:focus {
+.btn-secondary:focus {
   outline: 0.125rem solid var(--color-600);
   transition: 0.075s;
 }
 
-.btnPrimary:disabled,
-.btnSecondary:disabled {
+.btn-primary:disabled,
+.btn-secondary:disabled {
   opacity: 0.5;
 }

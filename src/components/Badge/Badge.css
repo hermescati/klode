@@ -1,0 +1,26 @@
+.badge-rating,
+.badge-danger {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 24px;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.4rem;
+  font-family: var(--open-sans);
+  font-weight: 700;
+}
+
+.badge-rating {
+  gap: 0.5rem;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.badge-danger {
+  left: 24px;
+  font-size: 0.875rem;
+  color: var(--color-50);
+  background: #cc0e00;
+  box-shadow: 0rem 0rem 0.75rem 0rem rgba(204, 14, 0, 0.45);
+  text-transform: uppercase;
+}

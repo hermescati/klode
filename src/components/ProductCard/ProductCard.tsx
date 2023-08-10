@@ -1,16 +1,8 @@
+import "./ProductCard.css";
 import Badge from "../Badge";
 import Button from "../Button";
-import styles from "./ProductCard.module.css";
+import { Product } from "../../hooks/useProducts";
 import { FaStar } from "react-icons/fa";
-
-export interface Product {
-  image: string;
-  name: string;
-  description: string;
-  rating: number;
-  price: number;
-  discount: number;
-}
 
 interface Props {
   product: Product;
@@ -21,33 +13,28 @@ const ProductCard = ({ product }: Props) => {
   const discountedPrice = product.price * (1 - product.discount);
 
   return (
-    <div className={styles.card}>
+    <div className="card">
       <div>
-        {isDiscounted && <Badge>sale</Badge>}
-        <img
-          className={styles.cardImage}
-          width="296"
-          height="260"
-          src={product.image}
-        />
-      </div>
-      <div className={styles.cardBody}>
-        <div className="d-flex justify-content-between align-items-center">
-          <h3 className={styles.cardHeading}>{product.name}</h3>
-          <div className="d-flex">
-            <FaStar size="16" color="#1D242D" />
-            <p className={styles.cardRating}>{product.rating}</p>
+        {isDiscounted && <Badge color="danger">sale</Badge>}
+        <img className="card-image" alt="product_image" src={product.image} />
+        <Badge color="rating">
+          <div className="row rating-wrapper">
+            <FaStar size="13" color="#1D242D" />
+            <p className="product-rating">{product.rating}</p>
           </div>
-        </div>
-        <div>
-          <p className={styles.cardDescription}>{product.description}</p>
-        </div>
-        <div className="d-flex justify-content-between align-items-center">
-          <div className={styles.cardPrice}>
-            <h6 className={styles.cardDiscount}>
-              from ${product.price.toFixed(2)}
-            </h6>
-            <h5 className={styles.cardPrice}>${discountedPrice.toFixed(2)}</h5>
+        </Badge>
+      </div>
+      <div className="col card-body">
+        <p className="product-title">{product.name}</p>
+        <p className="product-description">{product.description}</p>
+        <div className="row center">
+          <div className="col price-wrapper">
+            {isDiscounted && (
+              <p className="product-discount">
+                from ${product.price.toFixed(2)}
+              </p>
+            )}
+            <p className="product-price">${discountedPrice.toFixed(2)}</p>
           </div>
           <Button>Add to cart</Button>
         </div>
