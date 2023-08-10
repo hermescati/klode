@@ -6,6 +6,7 @@ import Dropdown, { SelectItem } from "./components/Dropdown";
 import { useState } from "react";
 import { Category } from "./hooks/useCategories";
 import "./App.css";
+import Alert from "./components/Alert";
 
 export interface ProductQuery {
   category: Category | null;
@@ -14,6 +15,8 @@ export interface ProductQuery {
 }
 
 function App() {
+  const [alertVisible, setAlertVisible] = useState(false);
+
   const [productQuery, setProductQuery] = useState<ProductQuery>({
     category: null,
     searchText: "",
@@ -29,26 +32,39 @@ function App() {
 
   return (
     <>
-      {/* <div className="main-grid">
-        <NavBar
-          selectedCategory={productQuery.category}
-          onSelectCategory={(category) =>
-            setProductQuery({ ...productQuery, category })
-          }
-          onSearch={(searchText) =>
-            setProductQuery({ ...productQuery, searchText })
-          }
-        />
-        <Dropdown
-          defaultText="Sort products"
-          items={optionsList}
-          onSelectItem={(sortOption) => {
-            setProductQuery({ ...productQuery, sortOption });
-          }}
-        />
-        <Header selectedCategory={productQuery.category} />
-        <ProductGrid productQuery={productQuery} />
-      </div> */}
+      {alertVisible && (
+        <Alert color="success" onDismiss={() => setAlertVisible(false)}>
+          Product added to your cart!
+        </Alert>
+      )}
+      <NavBar
+        selectedCategory={productQuery.category}
+        onSelectCategory={(category) =>
+          setProductQuery({ ...productQuery, category })
+        }
+        onSearch={(searchText) =>
+          setProductQuery({ ...productQuery, searchText })
+        }
+      />
+      <div className="main">
+        <div className="row">
+          <div className="col filter"></div>
+          <div className="col">
+            <Header selectedCategory={productQuery.category} />
+            <Dropdown
+              defaultText="Sort products"
+              items={optionsList}
+              onSelectItem={(sortOption) => {
+                setProductQuery({ ...productQuery, sortOption });
+              }}
+            />
+            <ProductGrid
+              productQuery={productQuery}
+              onClick={() => setAlertVisible(true)}
+            />
+          </div>
+        </div>
+      </div>
       <Footer />
     </>
   );

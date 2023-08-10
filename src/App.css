@@ -1,9 +1,17 @@
-.main-grid {
+.main {
   padding: 4rem 8.5rem 2.5rem;
   background-color: var(--color-50);
 }
 
 .filter {
-  height: 200px;
-  width: 200px;
+  display: flex;
+  height: 934px;
+  min-width: 324px;
+  background-color: var(--color-700);
+}
+
+@media (max-width: 768px) {
+  .filter {
+    display: none;
+  }
 }

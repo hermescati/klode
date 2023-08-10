@@ -6,9 +6,10 @@ import "./ProductCard.css";
 
 interface Props {
   product: Product;
+  onClick: () => void;
 }
 
-const ProductCard = ({ product }: Props) => {
+const ProductCard = ({ product, onClick }: Props) => {
   const isDiscounted = product.discount > 0;
   const discountedPrice = product.price * (1 - product.discount);
 
@@ -36,7 +37,7 @@ const ProductCard = ({ product }: Props) => {
             )}
             <p className="product-price">${discountedPrice.toFixed(2)}</p>
           </div>
-          <Button>Add to cart</Button>
+          <Button onClick={onClick}>Add to cart</Button>
         </div>
       </div>
     </div>

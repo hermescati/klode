@@ -5,11 +5,22 @@ interface Props {
   children: ReactNode;
   color?: "primary" | "secondary";
   disabled?: boolean;
+  onClick: () => void;
 }
 
-const Button = ({ children, color = "primary", disabled = false }: Props) => {
+const Button = ({
+  children,
+  color = "primary",
+  disabled = false,
+  onClick,
+}: Props) => {
   return (
-    <button type="button" disabled={disabled} className={"btn btn-" + color}>
+    <button
+      className={"btn btn-" + color}
+      type="button"
+      disabled={disabled}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

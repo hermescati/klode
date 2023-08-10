@@ -5,16 +5,17 @@ import "./ProductGrid.css";
 
 interface Props {
   productQuery: ProductQuery;
+  onClick: () => void;
 }
 
-const ProductGrid = ({ productQuery }: Props) => {
+const ProductGrid = ({ productQuery, onClick }: Props) => {
   const { data } = useProducts(productQuery);
 
   return (
     <>
       <div className="row-flex product-grid">
         {data.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} onClick={onClick} />
         ))}
       </div>
     </>

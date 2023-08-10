@@ -12,6 +12,9 @@
   --color-800: #1d242d;
   --color-900: #070c15;
 
+  --color-success: #abeab8;
+  --color-danger: #fd8989;
+
   --open-sans: "Open Sans";
   --quicksand: "Quicksand";
 }
