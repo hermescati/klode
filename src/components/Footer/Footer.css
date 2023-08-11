@@ -1,6 +1,11 @@
 .footer {
-  padding: 4rem 8.5rem 2.5rem;
+  padding: 4rem 0rem 2.5rem;
   background-color: var(--color-200);
+}
+
+.footer-size {
+  width: 90%;
+  margin: 0 auto;
 }
 
 .divider {
@@ -70,16 +75,4 @@ a {
 .payments {
   size: 56px;
   color: var(--color-800);
-}
-
-@media (max-width: 768px) {
-  .footer {
-    padding: 4rem 4rem 2rem;
-  }
-}
-
-@media (max-width: 425px) {
-  .footer {
-    padding: 3rem 3rem 2rem;
-  }
 }
