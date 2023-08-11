@@ -9,10 +9,10 @@ export interface SelectItem {
 interface Props {
   defaultText: string;
   items: SelectItem[];
-  onSelectItem: (item: SelectItem) => void;
+  onSort: (item: SelectItem) => void;
 }
 
-const Dropdown = ({ defaultText, items, onSelectItem }: Props) => {
+const Dropdown = ({ defaultText, items, onSort }: Props) => {
   const [showOptionList, setShowOptionList] = useState(false);
   const [defaultSelectText, setDefaultSelectText] = useState(defaultText);
 
@@ -38,7 +38,7 @@ const Dropdown = ({ defaultText, items, onSelectItem }: Props) => {
 
       const selectedItem = items.find((item) => item.name === name);
       if (selectedItem) {
-        onSelectItem(selectedItem);
+        onSort(selectedItem);
       }
     }
   };

@@ -1,0 +1,21 @@
+.main-grid {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 2rem;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-column {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 680px) {
+  .main-grid {
+    justify-content: center;
+  }
+}

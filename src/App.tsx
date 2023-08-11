@@ -1,6 +1,7 @@
-import ProductGrid from "./components/ProductGrid";
 import NavBar from "./components/NavBar";
+import MainGrid from "./components/MainGrid";
 import Footer from "./components/Footer";
+import Filter from "./components/Filter";
 import Alert from "./components/Alert";
 import { SelectItem } from "./components/Dropdown";
 import { useState } from "react";
@@ -39,14 +40,18 @@ function App() {
         </Alert>
       )}
       <div className="main-container">
-        <div className="filter"></div>
-        <ProductGrid
-          productQuery={productQuery}
-          onClick={() => setAlertVisible(true)}
-          onSelectItem={(sortOption) => {
-            setProductQuery({ ...productQuery, sortOption });
-          }}
-        />
+        <div className="filter-column">
+          <Filter />
+        </div>
+        <div className="products-column">
+          <MainGrid
+            productQuery={productQuery}
+            onClick={() => setAlertVisible(true)}
+            onSort={(sortOption) => {
+              setProductQuery({ ...productQuery, sortOption });
+            }}
+          />
+        </div>
       </div>
       <Footer />
     </>
