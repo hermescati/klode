@@ -26,7 +26,9 @@ const NavBar = ({ onSearch, selectedCategory, onSelectCategory }: Props) => {
           {data.map((category) => (
             <li key={category.id}>
               <a
-                className="nav-links"
+                className={`nav-links + ${
+                  selectedCategory === category ? "active" : ""
+                }`}
                 onClick={() => onSelectCategory(category)}
               >
                 {category.title}

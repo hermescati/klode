@@ -1,0 +1,12 @@
+.message-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 27.5rem;
+  gap: 1rem;
+  color: var(--color-500);
+  font-family: var(--quicksand);
+  font-weight: 500;
+  font-size: 1.2rem;
+}

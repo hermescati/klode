@@ -5,8 +5,10 @@ import { Category } from "./useCategories";
 export interface Product {
   id: number;
   image: string;
+  brand: string;
   name: string;
   description: string;
+  colors: string[];
   price: number;
   discount: number;
   rating: number;

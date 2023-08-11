@@ -45,7 +45,7 @@ nav ul li {
 .nav-links:hover {
   color: var(--color-600);
 }
-.selected {
+.nav-links.active {
   opacity: 0.5;
 }
 

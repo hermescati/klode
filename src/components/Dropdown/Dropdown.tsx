@@ -12,11 +12,7 @@ interface Props {
   onSelectItem: (item: SelectItem) => void;
 }
 
-const CustomSelect: React.FC<Props> = ({
-  defaultText,
-  items,
-  onSelectItem,
-}) => {
+const Dropdown = ({ defaultText, items, onSelectItem }: Props) => {
   const [showOptionList, setShowOptionList] = useState(false);
   const [defaultSelectText, setDefaultSelectText] = useState(defaultText);
 
@@ -84,4 +80,4 @@ const CustomSelect: React.FC<Props> = ({
   );
 };
 
-export default CustomSelect;
+export default Dropdown;
