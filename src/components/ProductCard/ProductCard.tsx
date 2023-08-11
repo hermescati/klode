@@ -6,12 +6,16 @@ import "./ProductCard.css";
 
 interface Props {
   product: Product;
-  onClick: () => void;
+  onClick: (product: Product) => void;
 }
 
 const ProductCard = ({ product, onClick }: Props) => {
   const isDiscounted = product.discount > 0;
   const discountedPrice = product.price * (1 - product.discount);
+
+  const handleOnClick = () => {
+    onClick(product); // Call the callback function with the product ID
+  };
 
   return (
     <div className="card">
@@ -37,7 +41,7 @@ const ProductCard = ({ product, onClick }: Props) => {
             )}
             <p className="product-price">${discountedPrice.toFixed(2)}</p>
           </div>
-          <Button onClick={onClick}>Add to cart</Button>
+          <Button onClick={handleOnClick}>Add to cart</Button>
         </div>
       </div>
     </div>

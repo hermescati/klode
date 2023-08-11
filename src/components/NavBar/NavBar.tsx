@@ -1,17 +1,25 @@
 import "./NavBar.css";
 import SearchBar from "../SearchBar";
-import { BsFillHandbagFill, BsFillPersonFill } from "react-icons/bs";
+import { BsFillPersonFill } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 import { useState } from "react";
 import useCategories, { Category } from "../../hooks/useCategories";
+import Cart from "../Cart";
+import { Product } from "../../hooks/useProducts";
 
 interface Props {
-  onSearch: (serachText: string) => void;
+  products: Product[];
   selectedCategory: Category | null;
+  onSearch: (serachText: string) => void;
   onSelectCategory: (category: Category) => void;
 }
 
-const NavBar = ({ onSearch, selectedCategory, onSelectCategory }: Props) => {
+const NavBar = ({
+  selectedCategory,
+  products,
+  onSearch,
+  onSelectCategory,
+}: Props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { data } = useCategories();
 
@@ -38,8 +46,8 @@ const NavBar = ({ onSearch, selectedCategory, onSelectCategory }: Props) => {
         </ul>
         <div className="nav-container">
           <SearchBar onSearch={onSearch} />
-          <BsFillHandbagFill color="#070c15" size="24" />
-          <BsFillPersonFill color="#070c15" size="28" />
+          <Cart products={products} />
+          <BsFillPersonFill color="#070c15" size="42" />
         </div>
       </nav>
     </>

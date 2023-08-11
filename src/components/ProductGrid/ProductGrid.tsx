@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import useProducts from "../../hooks/useProducts";
+import useProducts, { Product } from "../../hooks/useProducts";
 import ProductCard from "../ProductCard";
 import { ProductQuery } from "../../App";
 import "./ProductGrid.css";
@@ -9,7 +9,7 @@ import messageIcon from "../../assets/no-product-found.svg";
 
 interface Props {
   productQuery: ProductQuery;
-  onClick: () => void;
+  onClick: (product: Product) => void;
 }
 
 const ProductGrid = ({ productQuery, onClick }: Props) => {

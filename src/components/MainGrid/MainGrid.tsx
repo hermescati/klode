@@ -1,4 +1,5 @@
 import { ProductQuery } from "../../App";
+import { Product } from "../../hooks/useProducts";
 import Dropdown, { SelectItem } from "../Dropdown";
 import Header from "../Header";
 import ProductGrid from "../ProductGrid";
@@ -6,7 +7,7 @@ import "./MainGrid.css";
 
 interface Props {
   productQuery: ProductQuery;
-  onClick: () => void;
+  onClick: (product: Product) => void;
   onSort: (item: SelectItem) => void;
 }
 

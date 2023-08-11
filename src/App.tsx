@@ -4,9 +4,11 @@ import Footer from "./components/Footer";
 import Filter from "./components/Filter";
 import Alert from "./components/Alert";
 import { SelectItem } from "./components/Dropdown";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Category } from "./hooks/useCategories";
 import "./App.css";
+import Cart from "./components/Cart";
+import { Product } from "./hooks/useProducts";
 
 export interface ProductQuery {
   category: Category | null;
@@ -16,6 +18,7 @@ export interface ProductQuery {
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false);
+  const [selectedProducts, setSelectedProducts] = useState<Product[]>([]);
 
   const [productQuery, setProductQuery] = useState<ProductQuery>({
     category: null,
@@ -23,9 +26,25 @@ function App() {
     sortOption: null,
   });
 
+  const handleAddToCart = (newProduct: Product) => {
+    setAlertVisible(true);
+    setSelectedProducts((products) => [...products, newProduct]);
+  };
+
+  useEffect(() => {
+    if (alertVisible) {
+      const timeoutId = setTimeout(() => {
+        setAlertVisible(false);
+      }, 3000);
+
+      return () => clearTimeout(timeoutId);
+    }
+  }, [alertVisible]);
+
   return (
     <>
       <NavBar
+        products={selectedProducts}
         selectedCategory={productQuery.category}
         onSelectCategory={(category) =>
           setProductQuery({ ...productQuery, category })
@@ -46,7 +65,7 @@ function App() {
         <div className="products-column">
           <MainGrid
             productQuery={productQuery}
-            onClick={() => setAlertVisible(true)}
+            onClick={handleAddToCart}
             onSort={(sortOption) => {
               setProductQuery({ ...productQuery, sortOption });
             }}

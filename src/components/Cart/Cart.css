@@ -1,0 +1,22 @@
+.shopping-cart {
+  position: relative;
+  height: 24px;
+  width: 24px;
+}
+
+.notification-dot {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -0.5rem;
+  right: -0.5rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 18px;
+  color: var(--color-50);
+  background-color: var(--color-danger);
+  font-family: var(--quicksand);
+  font-size: 0.7rem;
+  font-weight: 500;
+}
