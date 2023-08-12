@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { TiChevronLeft } from "react-icons/ti";
 import "./Dropdown.css";
 
 export interface SelectItem {
@@ -20,7 +21,8 @@ const Dropdown = ({ defaultText, items, onSort }: Props) => {
     const target = e.target as HTMLElement;
     if (
       !target.classList.contains("select-option") &&
-      !target.classList.contains("select-container")
+      !target.classList.contains("select-container") &&
+      target.classList.contains("chevron")
     ) {
       setShowOptionList(false);
     }
@@ -43,7 +45,7 @@ const Dropdown = ({ defaultText, items, onSort }: Props) => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -59,6 +61,12 @@ const Dropdown = ({ defaultText, items, onSort }: Props) => {
         onClick={handleListDisplay}
       >
         {defaultSelectText}
+      </div>
+      <div
+        className={showOptionList ? "chevron" : "chevron open"}
+        onClick={handleListDisplay}
+      >
+        <TiChevronLeft color="#15273C" size="20" />
       </div>
       {showOptionList && (
         <ul className="options-container">

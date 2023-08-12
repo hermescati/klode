@@ -3,15 +3,17 @@ import { Product } from "../../hooks/useProducts";
 import Dropdown, { SelectItem } from "../Dropdown";
 import Header from "../Header";
 import ProductGrid from "../ProductGrid";
+import SearchBar from "../SearchBar";
 import "./MainGrid.css";
 
 interface Props {
   productQuery: ProductQuery;
   onClick: (product: Product) => void;
   onSort: (item: SelectItem) => void;
+  onSearch: (serachText: string) => void;
 }
 
-const MainGrid = ({ productQuery, onClick, onSort }: Props) => {
+const MainGrid = ({ productQuery, onClick, onSort, onSearch }: Props) => {
   const optionsList: SelectItem[] = [
     { id: 1, name: "Alphabetical A-Z" },
     { id: 2, name: "Alphabetical Z-A" },
@@ -26,6 +28,7 @@ const MainGrid = ({ productQuery, onClick, onSort }: Props) => {
           <Header selectedCategory={productQuery.category} />
         </div>
         <div className="right-column">
+          <SearchBar onSearch={onSearch} />
           <Dropdown
             defaultText="Sort products"
             items={optionsList}

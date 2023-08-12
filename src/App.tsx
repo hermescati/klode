@@ -43,21 +43,18 @@ function App() {
 
   return (
     <>
+      {alertVisible && (
+        <Alert color="success" onDismiss={() => setAlertVisible(false)}>
+          Product added to your cart!
+        </Alert>
+      )}
       <NavBar
         products={selectedProducts}
         selectedCategory={productQuery.category}
         onSelectCategory={(category) =>
           setProductQuery({ ...productQuery, category })
         }
-        onSearch={(searchText) =>
-          setProductQuery({ ...productQuery, searchText })
-        }
       />
-      {alertVisible && (
-        <Alert color="success" onDismiss={() => setAlertVisible(false)}>
-          Product added to your cart!
-        </Alert>
-      )}
       <div className="main-container">
         <div className="filter-column">
           <Filter />
@@ -69,6 +66,9 @@ function App() {
             onSort={(sortOption) => {
               setProductQuery({ ...productQuery, sortOption });
             }}
+            onSearch={(searchText) =>
+              setProductQuery({ ...productQuery, searchText })
+            }
           />
         </div>
       </div>
