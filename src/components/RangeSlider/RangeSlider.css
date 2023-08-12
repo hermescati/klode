@@ -48,6 +48,7 @@
   font-family: var(--quicksand);
   font-size: 0.85rem;
   font-weight: 600;
+  margin-bottom: 0.25rem;
 }
 
 @media (max-width: 960px) {
@@ -56,6 +57,12 @@
   }
 
   .input-field {
-    width: fit-content;
+    width: 14rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .input-field {
+    width: 100%;
   }
 }

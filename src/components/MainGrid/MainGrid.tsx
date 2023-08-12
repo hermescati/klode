@@ -35,17 +35,23 @@ const MainGrid = ({
   return (
     <>
       <div className="main-grid">
-        <div className="left-column">
-          <Header selectedCategory={productQuery.category} />
-        </div>
-        <div className="right-column">
+        <Header selectedCategory={productQuery.category} />
+        <div className="main-navigation">
           <SearchBar onSearch={onSearch} />
-          <Dropdown
-            defaultText="Sort products"
-            items={optionsList}
-            onSort={onSort}
-          />
-          <FilterButton onApplyFilters={onApplyFilters} />
+          <div className="right-navigation">
+            <div className="sort-container">
+              <Dropdown
+                defaultText="Sort products"
+                items={optionsList}
+                onSort={onSort}
+              />
+            </div>
+            <FilterButton
+              items={optionsList}
+              onSort={onSort}
+              onApplyFilters={onApplyFilters}
+            />
+          </div>
         </div>
         <ProductGrid productQuery={productQuery} onClick={onClick} />
       </div>

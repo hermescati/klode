@@ -7,83 +7,229 @@
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.card-image,
+.card-image {
+  object-fit: cover;
+  width: 18.5rem;
+  height: 16.25rem;
+}
+
 .no-image {
   width: 18.5rem;
   height: 16.25rem;
   background-color: var(--color-300);
 }
 
-.card-image {
-  object-fit: cover;
-}
-
-.card-body {
-  flex-wrap: wrap;
-  align-items: start;
-  justify-content: space-between;
-  padding: 1.5rem;
-  gap: 1rem;
-}
-
 .rating-wrapper {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   gap: 0.25rem;
 }
 
 .product-rating {
-  margin: 0;
   color: var(--color-800);
-  font-family: var(--open-sans);
+  font-family: var(--quick);
   font-size: 0.875rem;
   font-weight: 700;
 }
 
-.product-title {
-  margin: 0;
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card-header {
   width: 100%;
   color: var(--color-800);
-  font-family: var(--open-sans);
-  font-size: 1.18rem;
+  font-family: var(--quicksand);
+  font-size: 1.2rem;
   font-weight: 700;
 }
 
-.product-description {
-  margin: 0rem;
+.card-description {
   width: 100%;
-  height: 2.25rem;
+  height: 2.5rem;
   color: var(--color-500);
-  font-family: var(--open-sans);
-  font-size: 0.79rem;
-  font-weight: 400;
+  font-family: var(--quicksand);
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
-.card-container {
-  flex-wrap: wrap;
+.card-action {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
 
-.price-wrapper {
-  height: 3rem;
+.card-pricing {
+  display: flex;
+  flex-direction: column;
   justify-content: end;
+  height: 3rem;
+  gap: 0rem;
 }
 
-.product-discount {
-  margin: 0;
+.card-original-price {
   color: var(--color-400);
-  font-family: var(--open-sans);
+  font-family: var(--quicksand);
   font-size: 0.75rem;
   font-weight: 600;
 }
 
-.product-price {
-  margin: 0;
+.card-discounted-price {
   color: var(--color-700);
-  font-family: var(--open-sans);
-  font-size: 1.4rem;
+  font-family: var(--quicksand);
+  font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: -0.04rem;
+}
+
+@media (max-width: 960px) {
+  .card {
+    width: 10.18rem;
+  }
+
+  .card-image,
+  .no-image {
+    width: 10.18rem;
+    height: 11.875rem;
+  }
+
+  .card-badges {
+    display: none;
+  }
+
+  .card-body {
+    padding: 1rem;
+    gap: 0.25rem;
+  }
+
+  .card-info {
+    gap: 0.25rem;
+  }
+
+  .card-header {
+    height: 2.25rem;
+    font-size: 0.9rem;
+  }
+
+  .card-description {
+    height: 3rem;
+    width: 100%;
+    font-size: 0.6875rem;
+  }
+
+  .card-pricing {
+    flex-direction: row-reverse;
+    align-items: end;
+    justify-content: space-between;
+    height: 1.5rem;
+    gap: 2rem;
+  }
+
+  .card-original-price {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.625rem;
+  }
+
+  .card-discounted-price {
+    font-size: 1rem;
+  }
+
+  .card-button {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .card {
+    position: relative;
+    overflow: hidden;
+    width: 18.5rem;
+    border-radius: 1rem;
+    background: var(--color-50);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .card-image {
+    width: 18.5rem;
+    height: 16.25rem;
+  }
+
+  .no-image {
+    width: 18.5rem;
+    height: 16.25rem;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .card-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .card-header {
+    width: 100%;
+    height: auto;
+    color: var(--color-800);
+    font-family: var(--quicksand);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .card-description {
+    width: 100%;
+    height: 3rem;
+    color: var(--color-500);
+    font-family: var(--quicksand);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .card-pricing {
+    flex-direction: row-reverse;
+    align-items: end;
+    justify-content: space-between;
+    height: 1.5rem;
+    gap: 5rem;
+  }
+
+  .card-original-price {
+    color: var(--color-400);
+    font-family: var(--quicksand);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .card-discounted-price {
+    color: var(--color-700);
+    font-family: var(--quicksand);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
 }

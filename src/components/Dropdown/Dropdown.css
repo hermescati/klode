@@ -84,3 +84,10 @@
   background: rgba(56, 85, 123, 0.4);
   color: var(--color-600);
 }
+
+@media (max-width: 425px) {
+  .select {
+    width: 100%;
+    min-width: 5rem;
+  }
+}

@@ -25,14 +25,23 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .card-grid {
-    width: fit-content;
-    gap: 2rem;
+    margin-right: -2rem;
+    grid-template-columns: repeat(auto-fill, 10.18rem);
+    gap: 1rem;
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 425px) {
+  .card-grid {
+    margin-right: 0;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 375px) {
   .card-grid {
     display: flex;
     flex-direction: column;

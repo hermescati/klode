@@ -14,37 +14,45 @@ const ProductCard = ({ product, onClick }: Props) => {
   const discountedPrice = product.price * (1 - product.discount);
 
   const handleOnClick = () => {
-    onClick(product); // Call the callback function with the product ID
+    onClick(product);
   };
 
   return (
-    <div className="card">
-      <div>
-        {isDiscounted && <Badge color="danger">sale</Badge>}
-        <img className="card-image" alt="product_image" src={product.image} />
-        <Badge color="rating">
-          <div className="row rating-wrapper">
-            <FaStar size="13" color="#1D242D" />
-            <p className="product-rating">{product.rating}</p>
+    <>
+      <div className="card">
+        <img className="card-image" alt={product.name} src={product.image} />
+        <div className="card-badges">
+          {isDiscounted && <Badge color="danger">sale</Badge>}{" "}
+          <Badge color="rating">
+            <div className="rating-wrapper">
+              <FaStar size="13" color="#1D242D" />
+              <p className="product-rating">{product.rating}</p>{" "}
+            </div>
+          </Badge>
+        </div>
+        <div className="card-body">
+          <div className="card-info">
+            <h1 className="card-header">{product.name}</h1>
+            <p className="card-description">{product.description}</p>
           </div>
-        </Badge>
-      </div>
-      <div className="col card-body">
-        <p className="product-title">{product.name}</p>
-        <p className="product-description">{product.description}</p>
-        <div className="row center-between">
-          <div className="col price-wrapper">
-            {isDiscounted && (
-              <p className="product-discount">
-                from ${product.price.toFixed(2)}
+          <div className="card-action">
+            <div className="card-pricing">
+              {isDiscounted && (
+                <p className="card-original-price">
+                  from ${product.price.toFixed(2)}
+                </p>
+              )}
+              <p className="card-discounted-price">
+                ${discountedPrice.toFixed(2)}
               </p>
-            )}
-            <p className="product-price">${discountedPrice.toFixed(2)}</p>
+            </div>
+            <div className="card-button">
+              <Button onClick={handleOnClick}>Add to cart</Button>
+            </div>
           </div>
-          <Button onClick={handleOnClick}>Add to cart</Button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -2,15 +2,18 @@ import { BsFilter, BsArrowLeft } from "react-icons/bs";
 import "./FilterButton.css";
 import { useEffect, useState } from "react";
 import Filter from "../Filter";
+import Dropdown, { SelectItem } from "../Dropdown";
 
 interface Props {
+  items: SelectItem[];
+  onSort: (item: SelectItem) => void;
   onApplyFilters: (
     priceRange: [number, number],
     selectedColors: string[]
   ) => void;
 }
 
-const FilterButton = ({ onApplyFilters }: Props) => {
+const FilterButton = ({ items, onSort, onApplyFilters }: Props) => {
   const [panelOpen, setPanelOpen] = useState(false);
 
   const handleApplyFilter = (
@@ -45,13 +48,26 @@ const FilterButton = ({ onApplyFilters }: Props) => {
         <div className="backdrop" onClick={handleClickOutside}></div>
       )}
       <div className={panelOpen ? "side-panel visible" : "side-panel"}>
-        <BsArrowLeft
-          size="24"
-          strokeWidth="1px"
-          color="#15273C"
-          onClick={handlePanelOpen}
-        />
-        <Filter onApplyFilters={handleApplyFilter} />
+        <div className="side-panel-container">
+          <div className="side-panel-chevron">
+            <BsArrowLeft
+              size="24"
+              strokeWidth="1px"
+              color="#15273C"
+              onClick={handlePanelOpen}
+            />
+            <p className="chevron-text">Back</p>
+          </div>
+          <hr className="side-panel-divider"></hr>
+          <div className="side-panel-sort">
+            <Dropdown
+              defaultText="Sort products"
+              items={items}
+              onSort={onSort}
+            />
+          </div>
+          <Filter onApplyFilters={handleApplyFilter} />
+        </div>
       </div>
     </>
   );
