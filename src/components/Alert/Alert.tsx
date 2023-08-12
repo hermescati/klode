@@ -15,9 +15,9 @@ const Alert = ({ children, color = "success", onDismiss }: Props) => {
         <div className="row center alert-gap">
           <div className={"alert-circle-" + color}>
             {color === "success" ? (
-              <BsCheckLg size="24" stroke-width="1px" color="white" />
+              <BsCheckLg size="24" strokeWidth="1px" color="white" />
             ) : (
-              <BsXLg size="18" stroke-width="1.5px" color="white" />
+              <BsXLg size="18" strokeWidth="1.5px" color="white" />
             )}
           </div>
           <div className="col alert-wrapper">
@@ -32,7 +32,7 @@ const Alert = ({ children, color = "success", onDismiss }: Props) => {
         <div className="alert-circle">
           <BsXLg
             size="18"
-            stroke-width="1px"
+            strokeWidth="1px"
             color="#070c15"
             onClick={onDismiss}
           />

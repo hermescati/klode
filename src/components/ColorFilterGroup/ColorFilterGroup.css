@@ -19,5 +19,5 @@
   justify-content: flex-start;
   gap: 0.5rem;
   margin-left: -1rem;
-  margin-right: auto;
+  margin-right: -1rem;
 }

@@ -17,9 +17,11 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
   margin-top: 1.5rem;
   margin-left: -1rem;
-  gap: 0.35rem;
+  margin-right: -1rem;
+  gap: 0.5rem;
 }
 
 .input-field {
@@ -27,7 +29,7 @@
   align-items: center;
   padding: 0.4rem 1rem;
   border-radius: 0.5rem;
-  max-width: 6.5rem;
+  width: 6.5rem;
   border: 0.125rem solid var(--color-200);
   background-color: var(--color-50);
   color: var(--color-300);
@@ -44,4 +46,14 @@
   font-family: var(--quicksand);
   font-size: 0.85rem;
   font-weight: 600;
+}
+
+@media (max-width: 960px) {
+  .slider-fields {
+    gap: 1rem;
+  }
+
+  .input-field {
+    width: fit-content;
+  }
 }

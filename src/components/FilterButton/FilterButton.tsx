@@ -1,13 +1,35 @@
-import { BsFilter } from "react-icons/bs";
+import { BsFilter, BsArrowLeft } from "react-icons/bs";
 import "./FilterButton.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Filter from "../Filter";
 
 interface Props {
-  onClick: () => void;
+  onApplyFilters: (
+    priceRange: [number, number],
+    selectedColors: string[]
+  ) => void;
 }
 
-const FilterButton = ({ onClick }: Props) => {
+const FilterButton = ({ onApplyFilters }: Props) => {
   const [panelOpen, setPanelOpen] = useState(false);
+
+  const handleApplyFilter = (
+    priceRange: [number, number],
+    selectedColors: string[]
+  ) => {
+    onApplyFilters(priceRange, selectedColors);
+    handlePanelOpen();
+  };
+
+  const handlePanelOpen = () => {
+    setPanelOpen(!panelOpen);
+  };
+
+  const handleClickOutside = () => {
+    if (panelOpen) {
+      handlePanelOpen();
+    }
+  };
 
   return (
     <>
@@ -16,11 +38,20 @@ const FilterButton = ({ onClick }: Props) => {
           size="24"
           strokeWidth="1px"
           color="#15273C"
-          onClick={() => setPanelOpen(!panelOpen)}
+          onClick={handlePanelOpen}
         />
       </div>
+      {panelOpen && (
+        <div className="backdrop" onClick={handleClickOutside}></div>
+      )}
       <div className={panelOpen ? "side-panel visible" : "side-panel"}>
-        SidePanel here
+        <BsArrowLeft
+          size="24"
+          strokeWidth="1px"
+          color="#15273C"
+          onClick={handlePanelOpen}
+        />
+        <Filter onApplyFilters={handleApplyFilter} />
       </div>
     </>
   );

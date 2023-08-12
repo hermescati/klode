@@ -13,7 +13,7 @@ const ColorFilterGroup = ({ colors, onChange }: Props) => {
         <h3 className="colors-group-heading">Colors</h3>
         <div className="checkbox-group">
           {colors.map((color) => (
-            <CheckBox text={color} onChange={onChange} />
+            <CheckBox key={color} text={color} onChange={onChange} />
           ))}
         </div>
       </div>

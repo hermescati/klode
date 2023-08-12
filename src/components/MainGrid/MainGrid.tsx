@@ -12,9 +12,19 @@ interface Props {
   onClick: (product: Product) => void;
   onSort: (item: SelectItem) => void;
   onSearch: (serachText: string) => void;
+  onApplyFilters: (
+    priceRange: [number, number],
+    selectedColors: string[]
+  ) => void;
 }
 
-const MainGrid = ({ productQuery, onClick, onSort, onSearch }: Props) => {
+const MainGrid = ({
+  productQuery,
+  onClick,
+  onSort,
+  onSearch,
+  onApplyFilters,
+}: Props) => {
   const optionsList: SelectItem[] = [
     { id: 1, name: "Alphabetical A-Z" },
     { id: 2, name: "Alphabetical Z-A" },
@@ -35,7 +45,7 @@ const MainGrid = ({ productQuery, onClick, onSort, onSearch }: Props) => {
             items={optionsList}
             onSort={onSort}
           />
-          <FilterButton onClick={() => console.log("FIlter menu opened")} />
+          <FilterButton onApplyFilters={onApplyFilters} />
         </div>
         <ProductGrid productQuery={productQuery} onClick={onClick} />
       </div>

@@ -7,9 +7,7 @@ import { useEffect, useState } from "react";
 import { Category } from "./hooks/useCategories";
 import "./App.css";
 import { Product } from "./hooks/useProducts";
-import RangeSlider from "./components/RangeSlider";
 import Filter from "./components/Filter";
-import CheckBox from "./components/CheckBox";
 
 export interface ProductQuery {
   category: Category | null;
@@ -36,14 +34,14 @@ function App() {
     setSelectedProducts((products) => [...products, newProduct]);
   };
 
-  const handleColorSelect = (isChecked: boolean, color: string) => {
-    const updatedColors = isChecked
-      ? [...productQuery.selectedColors, color]
-      : productQuery.selectedColors.filter((c) => c !== color);
-
+  const handleApplyFilters = (
+    priceRange: [number, number],
+    selectedColors: string[]
+  ) => {
     setProductQuery({
       ...productQuery,
-      selectedColors: updatedColors,
+      priceRange,
+      selectedColors,
     });
   };
 
@@ -73,12 +71,7 @@ function App() {
       />
       <div className="main-container">
         <div className="filter-column">
-          <Filter
-            onPriceChange={(priceRange) => {
-              setProductQuery({ ...productQuery, priceRange });
-            }}
-            onColorSelect={handleColorSelect}
-          />
+          <Filter onApplyFilters={handleApplyFilters} />
         </div>
         <div className="products-column">
           <MainGrid
@@ -90,6 +83,7 @@ function App() {
             onSearch={(searchText) =>
               setProductQuery({ ...productQuery, searchText })
             }
+            onApplyFilters={handleApplyFilters}
           />
         </div>
       </div>
