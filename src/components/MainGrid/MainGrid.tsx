@@ -1,6 +1,7 @@
 import { ProductQuery } from "../../App";
 import { Product } from "../../hooks/useProducts";
 import Dropdown, { SelectItem } from "../Dropdown";
+import FilterButton from "../FilterButton";
 import Header from "../Header";
 import ProductGrid from "../ProductGrid";
 import SearchBar from "../SearchBar";
@@ -34,6 +35,7 @@ const MainGrid = ({ productQuery, onClick, onSort, onSearch }: Props) => {
             items={optionsList}
             onSort={onSort}
           />
+          <FilterButton onClick={() => console.log("FIlter menu opened")} />
         </div>
         <ProductGrid productQuery={productQuery} onClick={onClick} />
       </div>

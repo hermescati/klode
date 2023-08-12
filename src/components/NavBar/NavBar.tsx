@@ -1,11 +1,10 @@
-import "./NavBar.css";
-import SearchBar from "../SearchBar";
 import { BsFillPersonFill } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 import { useState } from "react";
 import useCategories, { Category } from "../../hooks/useCategories";
 import Cart from "../Cart";
 import { Product } from "../../hooks/useProducts";
+import "./NavBar.css";
 
 interface Props {
   products: Product[];

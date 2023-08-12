@@ -16,7 +16,7 @@ export interface Product {
 }
 
 const useProducts = (productQuery: ProductQuery) => {
-  const { category, searchText, sortOption } = productQuery;
+  const { category, searchText, sortOption, priceRange } = productQuery;
 
   let filteredProducts = products;
 
@@ -29,6 +29,13 @@ const useProducts = (productQuery: ProductQuery) => {
   if (searchText) {
     filteredProducts = filteredProducts.filter((product) =>
       product.name.toLowerCase().includes(searchText.toLowerCase())
+    );
+  }
+
+  if (priceRange && priceRange.length === 2) {
+    const [minPrice, maxPrice] = priceRange;
+    filteredProducts = filteredProducts.filter(
+      (product) => product.price >= minPrice && product.price <= maxPrice
     );
   }
 

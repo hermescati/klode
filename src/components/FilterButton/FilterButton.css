@@ -1,0 +1,30 @@
+.filters-button {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem 1.3rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--color-200);
+  background-color: var(--color-50);
+}
+
+.side-panel {
+  display: none;
+  position: absolute;
+  width: 90%;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 2;
+  border: 2px solid var(--color-300);
+  background-color: var(--color-50);
+}
+
+@media (max-width: 768px) {
+  .filters-button {
+    display: flex;
+  }
+  .side-panel.visible {
+    display: block;
+  }
+}

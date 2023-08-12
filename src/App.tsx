@@ -1,19 +1,20 @@
 import NavBar from "./components/NavBar";
 import MainGrid from "./components/MainGrid";
 import Footer from "./components/Footer";
-import Filter from "./components/Filter";
 import Alert from "./components/Alert";
 import { SelectItem } from "./components/Dropdown";
 import { useEffect, useState } from "react";
 import { Category } from "./hooks/useCategories";
 import "./App.css";
-import Cart from "./components/Cart";
 import { Product } from "./hooks/useProducts";
+import RangeSlider from "./components/RangeSlider";
+import Filter from "./components/Filter";
 
 export interface ProductQuery {
   category: Category | null;
   searchText: string;
   sortOption: SelectItem | null;
+  priceRange: number[];
 }
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
     category: null,
     searchText: "",
     sortOption: null,
+    priceRange: [],
   });
 
   const handleAddToCart = (newProduct: Product) => {
@@ -57,7 +59,11 @@ function App() {
       />
       <div className="main-container">
         <div className="filter-column">
-          <Filter />
+          <Filter
+            onPriceChange={(priceRange) => {
+              setProductQuery({ ...productQuery, priceRange });
+            }}
+          />
         </div>
         <div className="products-column">
           <MainGrid

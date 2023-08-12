@@ -6,7 +6,7 @@
   margin: 4rem auto 1rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .main-container {
     grid-template-columns: 1fr;
   }

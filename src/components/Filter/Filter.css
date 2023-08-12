@@ -1,4 +1,24 @@
-.filters-container {
-  max-width: 200px;
-  width: 100%;
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  background-color: var(--color-50);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.filter-header {
+  margin-left: -1rem;
+  font-family: var(--quicksand);
+  color: var(--color-800);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.filter-divider {
+  margin: 1.5rem -1rem;
+  border: 1px solid rgba(190, 199, 208, 0.5) !important;
+  border-radius: 0.5rem;
 }
