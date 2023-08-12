@@ -37,7 +37,9 @@
   font-weight: 600;
   font-size: 0.9rem;
 }
-.input-field:hover {
+.input-field:hover,
+.input-field:focus {
+  outline: 0;
   border: 0.125rem solid var(--color-400);
 }
 

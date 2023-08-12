@@ -11,23 +11,21 @@ interface Props {
 
 const RangeSlider = ({ min, max, onChange }: Props) => {
   const [values, setValues] = useState<[number, number]>([min, max]);
-  const minInputRef = useRef<HTMLInputElement>(null);
-  const maxInputRef = useRef<HTMLInputElement>(null);
 
-  const handleMinInputChange = () => {
-    const inputValue = minInputRef.current!.value;
-    const newMin =
-      inputValue !== "" ? parseInt(inputValue.replace("$", ""), 10) : min;
-    setValues([newMin, values[1]]);
-    onChange([newMin, values[1]]);
+  const handleMinInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newMin = parseInt(event.target.value);
+    if (!isNaN(newMin) && newMin >= min && newMin <= values[1]) {
+      setValues([newMin, values[1]]);
+      onChange([newMin, values[1]]);
+    }
   };
 
-  const handleMaxInputChange = () => {
-    const inputValue = maxInputRef.current!.value;
-    const newMax =
-      inputValue !== "" ? parseInt(inputValue.replace("$", ""), 10) : max;
-    setValues([values[0], newMax]);
-    onChange([values[0], newMax]);
+  const handleMaxInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newMax = parseInt(event.target.value);
+    if (!isNaN(newMax) && newMax >= values[0] && newMax <= max) {
+      setValues([values[0], newMax]);
+      onChange([values[0], newMax]);
+    }
   };
 
   const calculateMarks = (range: number) => {
@@ -138,20 +136,21 @@ const RangeSlider = ({ min, max, onChange }: Props) => {
         </div>
         <div className="slider-fields">
           <div className="col">
-            <label className="input-field-label">Min Price</label>
+            <label className="input-field-label">Min. Price ($)</label>
             <input
-              ref={minInputRef}
+              type="number"
               className="input-field"
-              value={"$" + values[0]}
+              value={values[0]}
+              defaultValue={min}
               onChange={handleMinInputChange}
             />
           </div>
           <div className="col">
-            <label className="input-field-label">Max Price</label>
+            <label className="input-field-label">Max. Price ($)</label>
             <input
-              ref={maxInputRef}
+              type="number"
               className="input-field"
-              value={"$" + values[1]}
+              value={values[1]}
               onChange={handleMaxInputChange}
             />
           </div>
