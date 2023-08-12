@@ -16,7 +16,8 @@ export interface Product {
 }
 
 const useProducts = (productQuery: ProductQuery) => {
-  const { category, searchText, sortOption, priceRange } = productQuery;
+  const { category, searchText, sortOption, priceRange, selectedColors } =
+    productQuery;
 
   let filteredProducts = products;
 
@@ -36,6 +37,12 @@ const useProducts = (productQuery: ProductQuery) => {
     const [minPrice, maxPrice] = priceRange;
     filteredProducts = filteredProducts.filter(
       (product) => product.price >= minPrice && product.price <= maxPrice
+    );
+  }
+
+  if (selectedColors.length > 0) {
+    filteredProducts = filteredProducts.filter((product) =>
+      product.colors.some((color) => selectedColors.includes(color))
     );
   }
 

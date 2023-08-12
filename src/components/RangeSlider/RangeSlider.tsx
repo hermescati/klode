@@ -88,42 +88,11 @@ const RangeSlider = ({ min, max, onChange }: Props) => {
     },
   };
 
-  // function handleOnChange(newValues: any) {
-  //   setValues(newValues);
-  //   onChange(newValues);
-  // }
-
-  // const handleMinInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   const inputValue = event.target.value;
-  //   if (inputValue === "") {
-  //     setValues([min, values[1]]);
-  //     onChange([min, values[1]]);
-  //   } else {
-  //     const newMin = parseInt(inputValue.replace("$", ""), 10);
-  //     const newMax = values[1];
-  //     setValues([newMin, newMax]);
-  //     onChange([newMin, newMax]);
-  //   }
-  // };
-
-  // const handleMaxInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   const inputValue = event.target.value;
-  //   if (inputValue === "") {
-  //     setValues([values[0], max]);
-  //     onChange([values[0], max]);
-  //   } else {
-  //     const newMin = values[0];
-  //     const newMax = parseInt(inputValue.replace("$", ""), 10);
-  //     setValues([newMin, newMax]);
-  //     onChange([newMin, newMax]);
-  //   }
-  // };
-
   return (
     <>
       <div>
         <div className="slider-container">
-          <p className="slider-heading">Price Range</p>
+          <h3 className="slider-heading">Price Range</h3>
           <Slider
             range
             min={min}
@@ -143,10 +112,11 @@ const RangeSlider = ({ min, max, onChange }: Props) => {
               borderColor: "#38557B",
             }}
             trackStyle={{
+              marginTop: 1,
               marginLeft: -6,
               borderRadius: 4,
               backgroundColor: "#38557B",
-              height: 8,
+              height: 6,
             }}
             railStyle={{
               marginLeft: -4,
@@ -161,7 +131,8 @@ const RangeSlider = ({ min, max, onChange }: Props) => {
               width: 20,
               borderWidth: 2,
               borderColor: "#EBEEF2",
-              background: "#F9FAFB",
+              backgroundColor: "#F9FAFB",
+              opacity: 1,
             }}
           />
         </div>

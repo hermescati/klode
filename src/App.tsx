@@ -9,12 +9,14 @@ import "./App.css";
 import { Product } from "./hooks/useProducts";
 import RangeSlider from "./components/RangeSlider";
 import Filter from "./components/Filter";
+import CheckBox from "./components/CheckBox";
 
 export interface ProductQuery {
   category: Category | null;
   searchText: string;
   sortOption: SelectItem | null;
   priceRange: number[];
+  selectedColors: string[];
 }
 
 function App() {
@@ -26,11 +28,23 @@ function App() {
     searchText: "",
     sortOption: null,
     priceRange: [],
+    selectedColors: [],
   });
 
   const handleAddToCart = (newProduct: Product) => {
     setAlertVisible(true);
     setSelectedProducts((products) => [...products, newProduct]);
+  };
+
+  const handleColorSelect = (isChecked: boolean, color: string) => {
+    const updatedColors = isChecked
+      ? [...productQuery.selectedColors, color]
+      : productQuery.selectedColors.filter((c) => c !== color);
+
+    setProductQuery({
+      ...productQuery,
+      selectedColors: updatedColors,
+    });
   };
 
   useEffect(() => {
@@ -63,6 +77,7 @@ function App() {
             onPriceChange={(priceRange) => {
               setProductQuery({ ...productQuery, priceRange });
             }}
+            onColorSelect={handleColorSelect}
           />
         </div>
         <div className="products-column">
