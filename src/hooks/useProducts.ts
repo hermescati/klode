@@ -35,9 +35,10 @@ const useProducts = (productQuery: ProductQuery) => {
 
   if (priceRange && priceRange.length === 2) {
     const [minPrice, maxPrice] = priceRange;
-    filteredProducts = filteredProducts.filter(
-      (product) => product.price >= minPrice && product.price <= maxPrice
-    );
+    filteredProducts = filteredProducts.filter((product) => {
+      const discountedPrice = product.price * (1 - product.discount);
+      return discountedPrice >= minPrice && discountedPrice <= maxPrice;
+    });
   }
 
   if (selectedColors.length > 0) {
@@ -56,9 +57,17 @@ const useProducts = (productQuery: ProductQuery) => {
         b.name.localeCompare(a.name)
       );
     } else if (sortOption.name === "Price Ascending") {
-      filteredProducts = filteredProducts.sort((a, b) => a.price - b.price);
+      filteredProducts = filteredProducts.sort((a, b) => {
+        const discountedPriceA = a.price * (1 - a.discount);
+        const discountedPriceB = b.price * (1 - b.discount);
+        return discountedPriceA - discountedPriceB;
+      });
     } else if (sortOption.name === "Price Descending") {
-      filteredProducts = filteredProducts.sort((a, b) => b.price - a.price);
+      filteredProducts = filteredProducts.sort((a, b) => {
+        const discountedPriceA = a.price * (1 - a.discount);
+        const discountedPriceB = b.price * (1 - b.discount);
+        return discountedPriceB - discountedPriceA;
+      });
     }
   }
 
