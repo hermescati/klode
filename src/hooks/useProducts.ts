@@ -28,8 +28,11 @@ const useProducts = (productQuery: ProductQuery) => {
   }
 
   if (searchText) {
-    filteredProducts = filteredProducts.filter((product) =>
-      product.name.toLowerCase().includes(searchText.toLowerCase())
+    filteredProducts = filteredProducts.filter(
+      (product) =>
+        product.name.toLowerCase().includes(searchText.toLowerCase()) ||
+        product.brand.toLowerCase().includes(searchText.toLowerCase()) ||
+        product.description.toLowerCase().includes(searchText.toLowerCase())
     );
   }
 

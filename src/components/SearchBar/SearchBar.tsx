@@ -23,7 +23,7 @@ const SearchBar = ({ onSearch }: Props) => {
           ref={ref}
           className="search-input"
           type="text"
-          placeholder="Search..."
+          placeholder="Search (name, keywords)"
         />
       </form>
     </>
