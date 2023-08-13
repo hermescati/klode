@@ -1,5 +1,5 @@
-import { BsFillHandbagFill } from "react-icons/bs";
 import { Product } from "../../hooks/useProducts";
+import { BsFillHandbagFill } from "react-icons/bs";
 import "./Cart.css";
 
 interface Props {

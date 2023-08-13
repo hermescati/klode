@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import products from "../data/products";
 import { Product } from "./useProducts";
+import products from "../data/products";
 
 const useColors = () => {
   const [colors, setColors] = useState<string[]>([]);

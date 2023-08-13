@@ -68,22 +68,24 @@ const Dropdown = ({ defaultText, items, onSort }: Props) => {
       >
         <TiChevronLeft color="#15273C" size="20" />
       </div>
-      {showOptionList && (
-        <ul className="options-container">
-          {items.map((option) => {
-            return (
-              <li
-                className="select-option"
-                data-name={option.name}
-                key={option.id}
-                onClick={handleOptionClick}
-              >
-                {option.name}
-              </li>
-            );
-          })}
-        </ul>
-      )}
+      <ul
+        className={
+          showOptionList ? "options-container open" : "options-container"
+        }
+      >
+        {items.map((option) => {
+          return (
+            <li
+              className="select-option"
+              data-name={option.name}
+              key={option.id}
+              onClick={handleOptionClick}
+            >
+              {option.name}
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };

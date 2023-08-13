@@ -60,6 +60,15 @@
   z-index: 99;
 }
 
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 @media (max-width: 960px) {
   .filters-button {
     display: flex;
@@ -74,6 +83,7 @@
     flex-direction: column;
     gap: 2rem;
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.4);
+    animation: slideInRight 0.3s ease-in-out forwards;
   }
 }
 

@@ -1,6 +1,6 @@
 import { ProductQuery } from "../App";
-import products from "../data/products";
 import { Category } from "./useCategories";
+import products from "../data/products";
 
 export interface Product {
   id: number;

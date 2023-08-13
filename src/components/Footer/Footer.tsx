@@ -6,17 +6,17 @@ const Footer = () => {
     <>
       <div className="footer">
         <div className="footer-size">
-          <div className="row-flex footer-links">
-            <div className="col footer-container">
+          <div className="footer-links">
+            <div className="footer-container">
               <h1 className="footer-logo">klode.</h1>
               <p className="footer-slogan">
                 Specialists in providing high-quality, stylish products for your
                 wardrobe
               </p>
             </div>
-            <div className="col footer-container">
+            <div className="footer-container">
               <h4 className="footer-header">Shop</h4>
-              <div className="col footer-wrapper">
+              <div className="footer-wrapper">
                 <a href="/collections">
                   <p className="footer-item">All Collections</p>
                 </a>
@@ -28,9 +28,9 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-            <div className="col footer-container">
+            <div className="footer-container">
               <h4 className="footer-header">Company</h4>
-              <div className="col footer-wrapper">
+              <div className="footer-wrapper">
                 <a href="/about">
                   <p className="footer-item">About Us</p>
                 </a>
@@ -42,9 +42,9 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-            <div className="col footer-container">
+            <div className="footer-container">
               <h4 className="footer-header">Privacy</h4>
-              <div className="col footer-wrapper">
+              <div className="footer-wrapper">
                 <a href="/terms">
                   <p className="footer-item">Terms of use</p>
                 </a>
@@ -53,17 +53,17 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-            <div className="col footer-container">
+            <div className="footer-container">
               <h4 className="footer-header">Payment Methods</h4>
-              <div className="row payment-wrapper">
+              <div className="payment-wrapper">
                 <FaCcMastercard size="24" color="#1d242d" />
                 <FaCcVisa size="24" color="#1d242d" />
                 <FaCcPaypal size="24" color="#1d242d" />
               </div>
             </div>
           </div>
-          <hr className="divider"></hr>
-          <div className="row-flex center">
+          <hr className="footer-divider"></hr>
+          <div className="footer-copyright-container">
             <p className="footer-copyright">
               Copyrights ©{new Date().getFullYear()} klode. All rights reserved.
             </p>

@@ -29,7 +29,7 @@
 
 .product-rating {
   color: var(--color-800);
-  font-family: var(--quick);
+  font-family: var(--quicksand);
   font-size: 0.875rem;
   font-weight: 700;
 }
@@ -156,7 +156,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 388px) {
   .card {
     position: relative;
     overflow: hidden;
@@ -194,21 +194,12 @@
   }
 
   .card-header {
-    width: 100%;
     height: auto;
-    color: var(--color-800);
-    font-family: var(--quicksand);
     font-size: 1.2rem;
-    font-weight: 700;
   }
 
   .card-description {
-    width: 100%;
-    height: 3rem;
-    color: var(--color-500);
-    font-family: var(--quicksand);
     font-size: 0.9rem;
-    font-weight: 500;
   }
 
   .card-pricing {

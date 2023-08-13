@@ -1,13 +1,13 @@
+import { useEffect, useState } from "react";
+import { Category } from "./hooks/useCategories";
+import { Product } from "./hooks/useProducts";
+import { SelectItem } from "./components/Dropdown";
 import NavBar from "./components/NavBar";
 import MainGrid from "./components/MainGrid";
 import Footer from "./components/Footer";
-import Alert from "./components/Alert";
-import { SelectItem } from "./components/Dropdown";
-import { useEffect, useState } from "react";
-import { Category } from "./hooks/useCategories";
-import "./App.css";
-import { Product } from "./hooks/useProducts";
 import Filter from "./components/Filter";
+import Alert from "./components/Alert";
+import "./App.css";
 
 export interface ProductQuery {
   category: Category | null;

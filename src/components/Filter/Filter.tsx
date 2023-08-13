@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Button from "../Button";
-import ColorFilterGroup from "../ColorFilterGroup";
-import RangeSlider from "../RangeSlider";
-import "./Filter.css";
 import useColors from "../../hooks/useColors";
+import RangeSlider from "../RangeSlider";
+import ColorFilterGroup from "../ColorFilterGroup";
+import Button from "../Button";
+import "./Filter.css";
 
 interface Props {
   onApplyFilters: (

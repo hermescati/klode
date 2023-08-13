@@ -7,17 +7,27 @@
 .heading,
 .description {
   margin: 0;
-  font-family: var(--open-sans);
+  font-family: var(--quicksand);
 }
 
 .heading {
   color: var(--color-900);
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   font-weight: 700;
 }
 
 .description {
   color: var(--color-400);
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 600;
+}
+
+@media (max-width: 960px) {
+  .heading {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 0.75rem;
+  }
 }

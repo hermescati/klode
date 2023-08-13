@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
+import { ProductQuery } from "../../App";
 import useProducts, { Product } from "../../hooks/useProducts";
 import ProductCard from "../ProductCard";
-import { ProductQuery } from "../../App";
-import "./ProductGrid.css";
 import Button from "../Button";
 import Message from "../Message";
 import messageIcon from "../../assets/no-product-found.svg";
+import "./ProductGrid.css";
 
 interface Props {
   productQuery: ProductQuery;

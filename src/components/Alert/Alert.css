@@ -1,6 +1,9 @@
 .alert {
-  position: fixed;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  position: fixed;
   bottom: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
@@ -10,6 +13,7 @@
   border: 0.125rem solid;
   border-radius: 1rem;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.25);
+  animation: slideUpAnimation 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .danger {
@@ -22,11 +26,17 @@
   background: #e5f3e8;
 }
 
-.alert-gap {
+.alert-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   gap: 1rem;
 }
 
 .alert-wrapper {
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -69,7 +79,19 @@
 
 .alert-text {
   color: var(--color-800, #1d242d);
-  font-family: var(--open-sans);
+  font-family: var(--quicksand);
   font-size: 0.8rem;
   font-weight: 500;
+  width: fit-content;
+}
+
+@keyframes slideUpAnimation {
+  0% {
+    transform: translateY(100%) translateX(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0), translateX(-50%);
+    opacity: 1;
+  }
 }

@@ -11,16 +11,16 @@ interface Props {
 const Alert = ({ children, color = "success", onDismiss }: Props) => {
   return (
     <>
-      <div className={"row alert " + color}>
-        <div className="row center alert-gap">
+      <div className={"alert " + color}>
+        <div className="alert-body">
           <div className={"alert-circle-" + color}>
             {color === "success" ? (
-              <BsCheckLg size="24" strokeWidth="1px" color="white" />
+              <BsCheckLg size="24" strokeWidth="1px" color="#f9fafb" />
             ) : (
-              <BsXLg size="18" strokeWidth="1.5px" color="white" />
+              <BsXLg size="18" strokeWidth="1.5px" color="#f9fafb" />
             )}
           </div>
-          <div className="col alert-wrapper">
+          <div className="alert-wrapper">
             {color === "success" ? (
               <h1 className="alert-heading">Success!</h1>
             ) : (

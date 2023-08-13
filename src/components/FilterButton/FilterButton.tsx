@@ -1,8 +1,8 @@
+import { useState } from "react";
 import { BsFilter, BsArrowLeft } from "react-icons/bs";
-import "./FilterButton.css";
-import { useEffect, useState } from "react";
-import Filter from "../Filter";
 import Dropdown, { SelectItem } from "../Dropdown";
+import Filter from "../Filter";
+import "./FilterButton.css";
 
 interface Props {
   items: SelectItem[];

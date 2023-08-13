@@ -1,9 +1,9 @@
+import { useState } from "react";
 import { BsFillPersonFill } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
-import { useState } from "react";
 import useCategories, { Category } from "../../hooks/useCategories";
-import Cart from "../Cart";
 import { Product } from "../../hooks/useProducts";
+import Cart from "../Cart";
 import "./NavBar.css";
 
 interface Props {
@@ -16,11 +16,15 @@ const NavBar = ({ selectedCategory, products, onSelectCategory }: Props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { data } = useCategories();
 
+  const handleMenuToggle = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <>
       <nav className="navbar">
         <a className="navbar-logo">klode.</a>
-        <div className="navbar-menu" onClick={() => setMenuOpen(!menuOpen)}>
+        <div className="navbar-menu" onClick={handleMenuToggle}>
           <FaBars color="#070c15" size="24" />
         </div>
         <ul
@@ -63,36 +67,6 @@ const NavBar = ({ selectedCategory, products, onSelectCategory }: Props) => {
       </nav>
     </>
   );
-
-  // return (
-  //   <>
-  //     <nav>
-  //       <a className="title">klode.</a>
-  //       <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
-  //         <FaBars color="#070c15" size="24" />
-  //       </div>
-  //       <ul className={menuOpen ? "open" : ""}>
-  //         {data.map((category) => (
-  //           <li key={category.id}>
-  //             <a
-  //               className={`nav-links + ${
-  //                 selectedCategory === category ? "active" : ""
-  //               }`}
-  //               onClick={() => onSelectCategory(category)}
-  //             >
-  //               {category.title}
-  //             </a>
-  //           </li>
-  //         ))}
-  //       </ul>
-  //       <div className="nav-container">
-  //         <SearchBar onSearch={onSearch} />
-  //         <Cart products={products} />
-  //         <BsFillPersonFill color="#070c15" size="42" />
-  //       </div>
-  //     </nav>
-  //   </>
-  // );
 };
 
 export default NavBar;

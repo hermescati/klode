@@ -8,6 +8,7 @@
   border-radius: 0.5rem;
   outline-offset: 0.125rem;
   font-family: var(--quicksand);
+  transition: 1s ease-in-out;
 }
 
 .normal {
@@ -27,15 +28,15 @@
 }
 .btn-primary:hover {
   background: var(--color-900);
-  transition: 0.75s;
+  transition: 1s ease-in-out;
 }
 .btn-primary:active {
   background: var(--color-800);
-  transition: 0.75s;
+  transition: 1s ease-in-out;
 }
 .btn-primary:focus {
   outline: 0.125rem solid var(--color-800);
-  transition: 0.075s;
+  transition: 0.075s ease-in-out;
 }
 
 .btn-secondary {
@@ -46,16 +47,16 @@
 .btn-secondary:hover {
   color: var(--color-50);
   background: var(--color-600);
-  transition: 0.75s;
+  transition: 1s ease-in-out;
 }
 .btn-secondary:active {
   color: var(--color-600);
   background: var(---color-50);
-  transition: 0.75s;
+  transition: 1s ease-in-out;
 }
 .btn-secondary:focus {
   outline: 0.125rem solid var(--color-600);
-  transition: 0.075s;
+  transition: 0.075s ease-in-out;
 }
 
 .btn-primary:disabled,

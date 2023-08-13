@@ -1,10 +1,10 @@
 import { ProductQuery } from "../../App";
 import { Product } from "../../hooks/useProducts";
+import Header from "../Header";
+import SearchBar from "../SearchBar";
 import Dropdown, { SelectItem } from "../Dropdown";
 import FilterButton from "../FilterButton";
-import Header from "../Header";
 import ProductGrid from "../ProductGrid";
-import SearchBar from "../SearchBar";
 import "./MainGrid.css";
 
 interface Props {

@@ -1,7 +1,7 @@
-import { useRef, useState } from "react";
-import "./RangeSlider.css";
-import "rc-slider/assets/index.css";
+import { useState } from "react";
 import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
+import "./RangeSlider.css";
 
 interface Props {
   min: number;
@@ -29,62 +29,19 @@ const RangeSlider = ({ min, max, onChange }: Props) => {
   };
 
   const calculateMarks = (range: number) => {
-    const percentageMarks = [];
-
-    for (let i = 0; i <= range; i += range * 0.1) {
-      percentageMarks.push(i);
-    }
-    return percentageMarks;
+    const stepSize = range * 0.1;
+    return Array.from({ length: 11 }, (_, index) =>
+      Math.round(index * stepSize)
+    );
   };
 
   const percentageMarks = calculateMarks(max - min);
-
-  const marks = {
-    [percentageMarks[0]]: {
-      style: { color: "#F9FAFB" },
-      label: percentageMarks[0],
-    },
-    [percentageMarks[1]]: {
-      style: { color: "#F9FAFB" },
-      label: percentageMarks[1],
-    },
-    [percentageMarks[2]]: {
-      style: { color: "#F9FAFB" },
-      label: percentageMarks[2],
-    },
-    [percentageMarks[3]]: {
-      style: { color: "#F9FAFB" },
-      label: percentageMarks[3],
-    },
-    [percentageMarks[4]]: {
-      style: { color: "#F9FAFB" },
-      label: percentageMarks[4],
-    },
-    [percentageMarks[5]]: {
-      style: { color: "#F9FAFB" },
-      label: percentageMarks[5],
-    },
-    [percentageMarks[6]]: {
-      style: { color: "#F9FAFB" },
-      label: percentageMarks[6],
-    },
-    [percentageMarks[7]]: {
-      style: { color: "#F9FAFB" },
-      label: percentageMarks[7],
-    },
-    [percentageMarks[8]]: {
-      style: { color: "#F9FAFB" },
-      label: percentageMarks[8],
-    },
-    [percentageMarks[9]]: {
-      style: { color: "#F9FAFB" },
-      label: percentageMarks[9],
-    },
-    [percentageMarks[10]]: {
-      style: { color: "#F9FAFB" },
-      label: percentageMarks[10],
-    },
-  };
+  const marks = Object.fromEntries(
+    percentageMarks.map((mark) => [
+      mark,
+      { style: { color: "#F9FAFB" }, label: mark },
+    ])
+  );
 
   return (
     <>

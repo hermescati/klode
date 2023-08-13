@@ -7,7 +7,7 @@
 .product-counter {
   margin: 1rem 0rem;
   color: var(--color-400);
-  font-family: var(--open-sans);
+  font-family: var(--quicksand);
   font-size: 0.875rem;
   font-weight: 600;
 }
@@ -39,9 +39,14 @@
     justify-content: center;
     gap: 1.5rem;
   }
+
+  .product-counter {
+    display: flex;
+    justify-content: center;
+  }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 388px) {
   .card-grid {
     display: flex;
     flex-direction: column;

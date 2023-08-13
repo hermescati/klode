@@ -1,7 +1,7 @@
-import Badge from "../Badge";
-import Button from "../Button";
 import { Product } from "../../hooks/useProducts";
 import { FaStar } from "react-icons/fa";
+import Badge from "../Badge";
+import Button from "../Button";
 import "./ProductCard.css";
 
 interface Props {
