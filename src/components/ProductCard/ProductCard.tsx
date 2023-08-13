@@ -3,6 +3,7 @@ import { FaStar } from "react-icons/fa";
 import Badge from "../Badge";
 import Button from "../Button";
 import "./ProductCard.css";
+import Wishlist from "../Wishlist";
 
 interface Props {
   product: Product;
@@ -22,13 +23,16 @@ const ProductCard = ({ product, onClick }: Props) => {
       <div className="card">
         <img className="card-image" alt={product.name} src={product.image} />
         <div className="card-badges">
-          {isDiscounted && <Badge color="danger">sale</Badge>}{" "}
+          {isDiscounted && <Badge color="danger">sale</Badge>}
           <Badge color="rating">
             <div className="rating-wrapper">
               <FaStar size="13" color="#1D242D" />
-              <p className="product-rating">{product.rating}</p>{" "}
+              <p className="product-rating">{product.rating}</p>
             </div>
           </Badge>
+        </div>
+        <div className="card-wishlist">
+          <Wishlist onClick={handleOnClick} />
         </div>
         <div className="card-body">
           <div className="card-info">

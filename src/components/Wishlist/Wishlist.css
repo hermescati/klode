@@ -1,0 +1,12 @@
+.wishlist-icon {
+  font-size: 1rem;
+  stroke-width: 2.5rem;
+  animation: popUpAnimation 0.3s ease-in-out;
+}
+
+@media (max-width: 388px) {
+  .wishlist-icon {
+    font-size: 1.5rem;
+    stroke-width: 24px;
+  }
+}
