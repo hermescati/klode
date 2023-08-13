@@ -21,8 +21,7 @@ const Dropdown = ({ defaultText, items, onSort }: Props) => {
     const target = e.target as HTMLElement;
     if (
       !target.classList.contains("select-option") &&
-      !target.classList.contains("select-container") &&
-      target.classList.contains("chevron")
+      !target.classList.contains("select-container")
     ) {
       setShowOptionList(false);
     }
@@ -68,24 +67,22 @@ const Dropdown = ({ defaultText, items, onSort }: Props) => {
       >
         <TiChevronLeft color="#15273C" size="20" />
       </div>
-      <ul
-        className={
-          showOptionList ? "options-container open" : "options-container"
-        }
-      >
-        {items.map((option) => {
-          return (
-            <li
-              className="select-option"
-              data-name={option.name}
-              key={option.id}
-              onClick={handleOptionClick}
-            >
-              {option.name}
-            </li>
-          );
-        })}
-      </ul>
+      {showOptionList && (
+        <ul className="options-container">
+          {items.map((option) => {
+            return (
+              <li
+                className="select-option"
+                data-name={option.name}
+                key={option.id}
+                onClick={handleOptionClick}
+              >
+                {option.name}
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </div>
   );
 };

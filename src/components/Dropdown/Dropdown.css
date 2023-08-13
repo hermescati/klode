@@ -28,23 +28,15 @@
 }
 
 .options-container {
-  position: absolute;
   margin-top: 0.25rem;
   padding: 0.5rem;
   z-index: 1;
+  position: absolute;
   min-width: 13rem;
-  opacity: 0;
   border-radius: 0.5rem;
   border: 2px solid var(--color-200);
   background: var(--color-50);
-  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.24);
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.options-container.open {
-  opacity: 1;
-  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
 }
 
 .select-option {

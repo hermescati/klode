@@ -14,7 +14,7 @@ const RangeSlider = ({ min, max, onChange }: Props) => {
 
   const handleMinInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newMin = parseInt(event.target.value);
-    if (!isNaN(newMin) && newMin >= min && newMin <= values[1]) {
+    if (!isNaN(newMin)) {
       setValues([newMin, values[1]]);
       onChange([newMin, values[1]]);
     }
@@ -22,7 +22,7 @@ const RangeSlider = ({ min, max, onChange }: Props) => {
 
   const handleMaxInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newMax = parseInt(event.target.value);
-    if (!isNaN(newMax) && newMax >= values[0] && newMax <= max) {
+    if (!isNaN(newMax)) {
       setValues([values[0], newMax]);
       onChange([values[0], newMax]);
     }
@@ -55,6 +55,7 @@ const RangeSlider = ({ min, max, onChange }: Props) => {
             marks={marks}
             step={null}
             onChange={(newValues) => {
+              console.log(newValues);
               setValues(newValues as [number, number]);
               onChange(newValues as [number, number]);
             }}
@@ -98,7 +99,7 @@ const RangeSlider = ({ min, max, onChange }: Props) => {
               type="number"
               className="input-field"
               value={values[0]}
-              defaultValue={min}
+              placeholder={min.toString()}
               onChange={handleMinInputChange}
             />
           </div>
@@ -108,6 +109,7 @@ const RangeSlider = ({ min, max, onChange }: Props) => {
               type="number"
               className="input-field"
               value={values[1]}
+              placeholder={max.toString()}
               onChange={handleMaxInputChange}
             />
           </div>
