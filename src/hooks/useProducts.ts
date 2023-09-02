@@ -6,8 +6,8 @@ export interface Product {
   id: number;
   image: string;
   brand: string;
+  model: string;
   name: string;
-  description: string;
   colors: string[];
   price: number;
   discount: number;

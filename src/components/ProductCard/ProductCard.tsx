@@ -1,9 +1,9 @@
 import { Product } from "../../hooks/useProducts";
-import { FaStar } from "react-icons/fa";
 import Badge from "../Badge";
-import Button from "../Button";
-import "./ProductCard.css";
+import BrandLogo from "../BrandLogo";
 import Wishlist from "../Wishlist";
+import FloatingButton from "../FloatingButton";
+import "./ProductCard.css";
 
 interface Props {
   product: Product;
@@ -12,7 +12,6 @@ interface Props {
 
 const ProductCard = ({ product, onClick }: Props) => {
   const isDiscounted = product.discount > 0;
-  const discountedPrice = product.price * (1 - product.discount);
 
   const handleOnClick = () => {
     onClick(product);
@@ -21,37 +20,35 @@ const ProductCard = ({ product, onClick }: Props) => {
   return (
     <>
       <div className="card">
-        <img className="card-image" alt={product.name} src={product.image} />
-        <div className="card-badges">
-          {isDiscounted && <Badge color="danger">sale</Badge>}
-          <Badge color="rating">
-            <div className="rating-wrapper">
-              <FaStar size="13" color="#1D242D" />
-              <p className="product-rating">{product.rating}</p>
-            </div>
-          </Badge>
-        </div>
-        <div className="card-wishlist">
-          <Wishlist onClick={handleOnClick} />
-        </div>
-        <div className="card-body">
-          <div className="card-info">
-            <h1 className="card-header">{product.name}</h1>
-            <p className="card-description">{product.description}</p>
+        <div className="card-image-wrapper">
+          <div className="card-image">
+            <img src={product.image} alt={product.name} />
           </div>
-          <div className="card-action">
-            <div className="card-pricing">
-              {isDiscounted && (
-                <p className="card-original-price">
-                  from ${product.price.toFixed(2)}
-                </p>
-              )}
-              <p className="card-discounted-price">
-                ${discountedPrice.toFixed(2)}
-              </p>
+          <div className="card-badge">
+            {isDiscounted && (
+              <Badge color="danger">-{product.discount * 100}%</Badge>
+            )}
+          </div>
+          <div className="card-cta">
+            <FloatingButton color="transparent">
+              <Wishlist onClick={handleOnClick} />
+            </FloatingButton>
+          </div>
+        </div>
+        <div className="card-wrapper">
+          <div className="card-container">
+            <div className="product-brand">
+              <BrandLogo product={product} />
+              <span>{product.model}</span>
             </div>
-            <div className="card-button">
-              <Button onClick={handleOnClick}>Add to cart</Button>
+            <h2>{product.name}</h2>
+            <div className="card-footer">
+              <h2>${product.price.toFixed(2)}</h2>
+              {isDiscounted && (
+                <span className="product-original-price">
+                  ${(product.price * (1 - product.discount)).toFixed(2)}
+                </span>
+              )}
             </div>
           </div>
         </div>

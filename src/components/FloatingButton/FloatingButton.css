@@ -1,0 +1,10 @@
+.fab {
+  display: flex;
+  padding: 0.5rem;
+  border-radius: 0.55rem;
+}
+
+.fab-transparent {
+  background: rgba(255, 255, 255, 0.85);
+  animation: popUpAnimation 0.5s ease-in;
+}
