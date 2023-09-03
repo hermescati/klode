@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Category } from "./hooks/useCategories";
 import { Product } from "./hooks/useProducts";
 import { SelectItem } from "./components/Dropdown";
 import NavBar from "./components/NavBar";
@@ -10,10 +9,12 @@ import Alert from "./components/Alert";
 import "./App.css";
 
 export interface ProductQuery {
-  category: Category | null;
   searchText: string;
   sortOption: SelectItem | null;
   priceRange: number[];
+  selectedCategories: string[];
+  selectedBrands: string[];
+  selectedSizes: string[];
   selectedColors: string[];
 }
 
@@ -22,10 +23,12 @@ function App() {
   const [selectedProducts, setSelectedProducts] = useState<Product[]>([]);
 
   const [productQuery, setProductQuery] = useState<ProductQuery>({
-    category: null,
     searchText: "",
     sortOption: null,
     priceRange: [],
+    selectedCategories: [],
+    selectedBrands: [],
+    selectedSizes: [],
     selectedColors: [],
   });
 
@@ -36,11 +39,17 @@ function App() {
 
   const handleApplyFilters = (
     priceRange: [number, number],
+    selectedCategories: string[],
+    selectedBrands: string[],
+    selectedSizes: string[],
     selectedColors: string[]
   ) => {
     setProductQuery({
       ...productQuery,
       priceRange,
+      selectedCategories,
+      selectedBrands,
+      selectedSizes,
       selectedColors,
     });
   };
@@ -64,10 +73,10 @@ function App() {
       )}
       <NavBar
         products={selectedProducts}
-        selectedCategory={productQuery.category}
-        onSelectCategory={(category) =>
-          setProductQuery({ ...productQuery, category })
-        }
+        // selectedCategory={productQuery.category}
+        // onSelectCategory={(category) =>
+        //   setProductQuery({ ...productQuery, category })
+        // }
       />
       <div className="main-container">
         <div className="filter-column">

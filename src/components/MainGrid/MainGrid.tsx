@@ -14,6 +14,7 @@ interface Props {
   onSearch: (serachText: string) => void;
   onApplyFilters: (
     priceRange: [number, number],
+    selectedCategories: string[],
     selectedColors: string[]
   ) => void;
 }
@@ -35,7 +36,8 @@ const MainGrid = ({
   return (
     <>
       <div className="main-grid">
-        <Header selectedCategory={productQuery.category} />
+        {/* <Header selectedCategory={productQuery.selectedCategories} /> */}
+        <h3>All Products</h3>
         <div className="main-navigation">
           <SearchBar onSearch={onSearch} />
           <div className="right-navigation">
@@ -46,11 +48,11 @@ const MainGrid = ({
                 onSort={onSort}
               />
             </div>
-            <FilterButton
+            {/* <FilterButton
               items={optionsList}
               onSort={onSort}
               onApplyFilters={onApplyFilters}
-            />
+            /> */}
           </div>
         </div>
         <ProductGrid productQuery={productQuery} onClick={onClick} />

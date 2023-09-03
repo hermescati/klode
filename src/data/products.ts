@@ -1,758 +1,82 @@
 export default [
   {
-    id: 1,
-    image:
-      "https://www.thefashionspot.com/wp-content/uploads/sites/11/gallery/10-luxury-bags-to-save-up-for/celine-16.jpg",
+    sku: "CN2405-900",
     brand: "Nike",
     model: "Air Force 1 Low",
-    name: "Travis Scott Cactus Jack",
-    colors: ["Black", "Brown", "Red"],
-    price: 514,
-    discount: 0.2,
-    rating: 4.5,
-    category: {
-      id: 1,
-      title: "Bags",
-      description:
-        "Discover a curated collection of luxury bags that blend style with practicality.",
-    },
+    nickname: "Travis Scott - Cactus Jack",
+    description:
+      "The Travis Scott x Nike Air Force 1 Low “Cactus Jack” is Scott’s intentionally rough-and-tumble reimagining of the revered silhouette. The patchwork design calls to mind Nike’s Bespoke Design Lab formerly located in downtown Manhattan for its sewn-together, DIY-inspired ethos. Scott outfits his second Air Force 1 Low collaboration with sturdy canvas patches that include shades of brown, lilac, dark navy blue, and black along the upper. A brown canvas Swoosh is located on each lateral side with a camo Swoosh on each medial side. Scott's 'Cactus Jack' graphics can be found printed across various panels of the upper. A black leather perforated toe contrasts the canvas, as does a unique black corduroy and blue nylon lace cover with a large gold zipper running down the middle. The medial side of the shoe also sports mismatched canvas with a tan buckle covering the heel. A cream midsole with a gum outsole completes the look",
+    colorway: "multi-color/muted bornze-fossi",
+    colors: ["brown", "purple", "blue", "black"],
+    sizing: "men",
+    available_sizes: [
+      4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 15,
+    ],
+    release_year: 2019,
+    retail_price: 160,
+    resell_price: 647,
+    discount_percentage: 0.2,
+    image:
+      "https://img.stadiumgoods.com/nike-air-force-1-low-travis-scott-cactus-jack_14700437_43094452_2048.jpg",
   },
   {
-    id: 2,
-    image:
-      "https://img.buzzfeed.com/buzzfeed-static/complex/images/Y19jcm9wLGhfMTI0OSx3XzIwMDAseF8wLHlfNDE3/vbxefx0ngnrreoiih1kj/air-jordan-1-homage-to-home-861428-061-pair.jpg?output-format=jpg&output-quality=auto",
+    sku: "AR9880-023",
     brand: "Jordan",
-    model: "AJ1 Homage to Home",
-    name: "Jordan 1 Retro High",
-    colors: ["White", "Black", "Gray"],
-    price: 120,
-    discount: 0,
-    rating: 4.2,
-    category: {
-      id: 2,
-      title: "Shoes",
-      description:
-        "Step into a world of luxury footwear that merges comfort and sophistication.",
-    },
+    model: "Jordan 1 Retro High",
+    nickname: "Homage to Home",
+    description:
+      "Classic Air Jordan 1 colorways have been combined before, but never quite like this. In spring 2018 Jordan Brand paid respect to the city of Chicago with the Air Jordan 1 “Homage to Home.” The sneaker is split down the middle with the the iconic “Bred” and “Chicago” colorways applied to each half. This model is part of the initial release that was sold exclusively in the Chicago area in an edition of 2,300 individually numbered pairs. The Chicago-exclusive version has 'From' and 'For' printed on the heels as another ode to the city where Michael Jordan became a legend.",
+    colorway: "black/university red - white",
+    colors: ["red", "white", "black"],
+    sizing: "women",
+    available_sizes: [10, 11, 11.5, 12, 14],
+    release_year: 2018,
+    retail_price: 160,
+    resell_price: 1084,
+    discount_percentage: 0,
+    image:
+      "https://img.stadiumgoods.com/jordan-air-jordan-1-hi-h2h-nrg-chi-homage-to-home-numbered_13158181_42984872_1000.jpg",
   },
   {
-    id: 3,
+    sku: "BB550SE1",
+    brand: "New Balance",
+    model: "550",
+    nickname: "White Red",
+    description:
+      "The New Balance 550 “White/Red/Black” is a retro-inspired colorway of the vintage basketball shoe that has been featured in popular collaborations with Aimé Leon Dore and Joe Freshgoods. Since returning on the scene in 2020 after spending the years prior in the vault, the New Balance 550 has become one of the brand’s most desirable shoes. The “White/Red/Black” features a white perforated upper with a red “N” branding on the sides. Black leather detailing is found on the red neoprene collar. A red “550” logo is embroidered on the forefoot. Additional branding includes an “NB” logo on the heel and retro-inspired “New Balance 550 USA” detailing on the tongue. A chunky white rubber midsole is contrasted with a black and red outsole.",
+    colorway: "white red",
+    colors: ["white", "red"],
+    sizing: "kids",
+    available_sizes: [
+      4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12,
+      13, 14,
+    ],
+    release_year: 2022,
+    retail_price: 110,
+    resell_price: 103,
+    discount_percentage: 0,
     image:
-      "https://timekeeper.global/wp-content/uploads/2022/11/LHK_3518-low-light.jpg",
-    brand: "TimeMaster",
-    model: "Chrono Classic Watch",
-    name: "Sophisticated watch with chronograph features.",
-    colors: ["Silver", "Gold", "Black"],
-    price: 350,
-    discount: 0,
-    rating: 4.8,
-    category: {
-      id: 3,
-      title: "Watches",
-      description:
-        "Embrace the art of horology with our selection of exquisite timepieces.",
-    },
+      "https://img.stadiumgoods.com/new-balance-550-white-red_16959128_45620015_2048.jpg",
   },
   {
-    id: 4,
+    sku: "GZ0711",
+    brand: "Adidas",
+    model: "Yeezy Boost 700 MNVN",
+    nickname: "Blue Tint",
+    description:
+      "The adidas Yeezy Boost 700 MNVN “Blue Tint” is a Summer 2021 release of the retro-inspired “dad shoe” by Kanye West that continues the silhouette’s association with head-turning color blocking. The Yeezy 700 MNVN is one of four variations of the model and the only 700 to feature a branding and a no-sewn overlay design. As for the “Blue Tint,” adidas dresses the nylon upper in an icy light blue hue and places reflective “700” branding to either side that shines when exposed to light in the dark. Other details include a no-tie bungee lacing system and reflective black and grey panels on the toe and heel. The aforementioned details give the 700 MNVN a more progressive look when compared to early 700 releases. Adidas’s responsive Boost cushioning is embedded within the chunky black midsole. Release date: July 5, 2021",
+    colorway: "blue tint/blue tint/blue tint",
+    colors: ["black", "blue"],
+    sizing: "men",
+    available_sizes: [
+      4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 10, 10.5, 11, 11.5, 12, 12.5,
+      13, 13.5, 14, 14.5, 17,
+    ],
+    release_year: 2021,
+    retail_price: 150,
+    resell_price: 235,
+    discount_percentage: 0.1,
     image:
-      "https://timekeeper.global/wp-content/uploads/2022/11/LHK_3518-low-light.jpg",
-    brand: "TimeMaster",
-    model: "Minimalist Quartz Watch",
-    name: "Elegant and simple quartz watch for everyday wear.",
-    colors: ["Silver", "Rose Gold"],
-    price: 150,
-    discount: 0.1,
-    rating: 4.7,
-    category: {
-      id: 3,
-      title: "Watches",
-      description:
-        "Embrace the art of horology with our selection of exquisite timepieces.",
-    },
-  },
-  {
-    id: 5,
-    image:
-      "https://darethcolburn.com/cdn/shop/products/JE-4230-S-1.jpg?v=1618431485",
-    brand: "JewelCraft",
-    model: "Pearl Drop Earrings",
-    name: "Graceful pearl earrings for elegant evenings.",
-    colors: ["White", "Silver"],
-    price: 180,
-    discount: 0,
-    rating: 4.7,
-    category: {
-      id: 4,
-      title: "Jewerly",
-      description:
-        "Elevate your personal style with our range of exquisite jewelry and accessories.",
-    },
-  },
-  {
-    id: 6,
-    image:
-      "https://www.thefashionspot.com/wp-content/uploads/sites/11/gallery/10-luxury-bags-to-save-up-for/celine-16.jpg",
-    brand: "LuxuryBrand",
-    model: "Leather Document Holder",
-    name: "Sleek leather holder for important documents.",
-    colors: ["Black", "Brown"],
-    price: 180,
-    discount: 0,
-    rating: 4.2,
-    category: {
-      id: 1,
-      title: "Bags",
-      description:
-        "Discover a curated collection of luxury bags that blend style with practicality.",
-    },
-  },
-  {
-    id: 7,
-    image:
-      "https://timekeeper.global/wp-content/uploads/2022/11/LHK_3518-low-light.jpg",
-    brand: "TimeMaster",
-    model: "Modern Chronograph",
-    name: "Contemporary chronograph watch with a bold design.",
-    colors: ["Black", "Red"],
-    price: 280,
-    discount: 0,
-    rating: 4.3,
-    category: {
-      id: 3,
-      title: "Watches",
-      description:
-        "Embrace the art of horology with our selection of exquisite timepieces.",
-    },
-  },
-  {
-    id: 8,
-    image:
-      "https://img.buzzfeed.com/buzzfeed-static/complex/images/Y19jcm9wLGhfMTI0OSx3XzIwMDAseF8wLHlfNDE3/vbxefx0ngnrreoiih1kj/air-jordan-1-homage-to-home-861428-061-pair.jpg?output-format=jpg&output-quality=auto",
-    brand: "FootFlex",
-    model: "Running Sneakers",
-    name: "Flexible sneakers designed for running.",
-    colors: ["Gray", "Blue"],
-    price: 110,
-    discount: 0.3,
-    rating: 4.2,
-    category: {
-      id: 2,
-      title: "Shoes",
-      description:
-        "Step into a world of luxury footwear that merges comfort and sophistication.",
-    },
-  },
-  {
-    id: 9,
-    image:
-      "https://darethcolburn.com/cdn/shop/products/JE-4230-S-1.jpg?v=1618431485",
-    brand: "GemGlow",
-    model: "Crystal Drop Necklace",
-    name: "Radiant crystal necklace for a glamorous look.",
-    colors: ["Silver", "Clear"],
-    price: 280,
-    discount: 0.1,
-    rating: 4.5,
-    category: {
-      id: 4,
-      title: "Jewerly",
-      description:
-        "Elevate your personal style with our range of exquisite jewelry and accessories.",
-    },
-  },
-  {
-    id: 10,
-    image:
-      "https://timekeeper.global/wp-content/uploads/2022/11/LHK_3518-low-light.jpg",
-    brand: "ElegantWrist",
-    model: "Elegant Mesh Watch",
-    name: "Sophisticated mesh watch for formal occasions.",
-    colors: ["Silver", "Rose Gold"],
-    price: 290,
-    discount: 0,
-    rating: 4.8,
-    category: {
-      id: 3,
-      title: "Watches",
-      description:
-        "Embrace the art of horology with our selection of exquisite timepieces.",
-    },
-  },
-  {
-    id: 11,
-    image:
-      "https://timekeeper.global/wp-content/uploads/2022/11/LHK_3518-low-light.jpg",
-    brand: "PrecisionTime",
-    model: "Dressy Quartz Watch",
-    name: "Precision-engineered quartz watch with a dressy look.",
-    colors: ["Black", "Gold"],
-    price: 180,
-    discount: 0,
-    rating: 4.6,
-    category: {
-      id: 3,
-      title: "Watches",
-      description:
-        "Embrace the art of horology with our selection of exquisite timepieces.",
-    },
-  },
-  {
-    id: 12,
-    image:
-      "https://www.thefashionspot.com/wp-content/uploads/sites/11/gallery/10-luxury-bags-to-save-up-for/celine-16.jpg",
-    brand: "UrbanChic",
-    model: "Stylish Crossbody Bag",
-    name: "Chic crossbody bag for urban fashionistas.",
-    colors: ["Black", "Pink"],
-    price: 180,
-    discount: 0,
-    rating: 4.6,
-    category: {
-      id: 1,
-      title: "Bags",
-      description:
-        "Discover a curated collection of luxury bags that blend style with practicality.",
-    },
-  },
-  {
-    id: 13,
-    image:
-      "https://darethcolburn.com/cdn/shop/products/JE-4230-S-1.jpg?v=1618431485",
-    brand: "GemGlow",
-    model: "Crystal Drop Necklace",
-    name: "Radiant crystal necklace for a glamorous look.",
-    colors: ["Silver", "Clear"],
-    price: 280,
-    discount: 0.1,
-    rating: 4.5,
-    category: {
-      id: 4,
-      title: "Jewerly",
-      description:
-        "Elevate your personal style with our range of exquisite jewelry and accessories.",
-    },
-  },
-  {
-    id: 14,
-    image:
-      "https://www.thefashionspot.com/wp-content/uploads/sites/11/gallery/10-luxury-bags-to-save-up-for/celine-16.jpg",
-    brand: "CasualCarry",
-    model: "Casual Canvas Backpack",
-    name: "Relaxed canvas backpack for everyday use.",
-    colors: ["Navy", "Gray"],
-    price: 120,
-    discount: 0.15,
-    rating: 4.1,
-    category: {
-      id: 1,
-      title: "Bags",
-      description:
-        "Discover a curated collection of luxury bags that blend style with practicality.",
-    },
-  },
-  {
-    id: 15,
-    image:
-      "https://timekeeper.global/wp-content/uploads/2022/11/LHK_3518-low-light.jpg",
-    brand: "EleganceTime",
-    model: "Classic Leather Watch",
-    name: "Timeless leather watch with a touch of elegance.",
-    colors: ["Brown", "Gold"],
-    price: 260,
-    discount: 0,
-    rating: 4.7,
-    category: {
-      id: 3,
-      title: "Watches",
-      description:
-        "Embrace the art of horology with our selection of exquisite timepieces.",
-    },
-  },
-  {
-    id: 16,
-    image:
-      "https://img.buzzfeed.com/buzzfeed-static/complex/images/Y19jcm9wLGhfMTI0OSx3XzIwMDAseF8wLHlfNDE3/vbxefx0ngnrreoiih1kj/air-jordan-1-homage-to-home-861428-061-pair.jpg?output-format=jpg&output-quality=auto",
-    brand: "ModernSteps",
-    model: "Modern Urban Sneakers",
-    name: "Contemporary sneakers with an urban edge.",
-    colors: ["White", "Black"],
-    price: 130,
-    discount: 0.2,
-    rating: 4.3,
-    category: {
-      id: 2,
-      title: "Shoes",
-      description:
-        "Step into a world of luxury footwear that merges comfort and sophistication.",
-    },
-  },
-  {
-    id: 17,
-    image:
-      "https://darethcolburn.com/cdn/shop/products/JE-4230-S-1.jpg?v=1618431485",
-    brand: "GemGlow",
-    model: "Sapphire Halo Earrings",
-    name: "Dazzling sapphire earrings with a halo of diamonds.",
-    colors: ["Blue", "Silver"],
-    price: 380,
-    discount: 0,
-    rating: 4.9,
-    category: {
-      id: 4,
-      title: "Jewerly",
-      description:
-        "Elevate your personal style with our range of exquisite jewelry and accessories.",
-    },
-  },
-  {
-    id: 18,
-    image:
-      "https://img.buzzfeed.com/buzzfeed-static/complex/images/Y19jcm9wLGhfMTI0OSx3XzIwMDAseF8wLHlfNDE3/vbxefx0ngnrreoiih1kj/air-jordan-1-homage-to-home-861428-061-pair.jpg?output-format=jpg&output-quality=auto",
-    brand: "ActiveStride",
-    model: "Athletic Training Sneakers",
-    name: "Versatile sneakers designed for active training.",
-    colors: ["Black", "Red"],
-    price: 140,
-    discount: 0,
-    rating: 4.4,
-    category: {
-      id: 2,
-      title: "Shoes",
-      description:
-        "Step into a world of luxury footwear that merges comfort and sophistication.",
-    },
-  },
-  {
-    id: 19,
-    image:
-      "https://img.buzzfeed.com/buzzfeed-static/complex/images/Y19jcm9wLGhfMTI0OSx3XzIwMDAseF8wLHlfNDE3/vbxefx0ngnrreoiih1kj/air-jordan-1-homage-to-home-861428-061-pair.jpg?output-format=jpg&output-quality=auto",
-    brand: "SneakPeak",
-    model: "Athleisure Sneakers",
-    name: "Versatile sneakers combining athletic and leisure style.",
-    colors: ["White", "Blue"],
-    price: 130,
-    discount: 0,
-    rating: 4.4,
-    category: {
-      id: 2,
-      title: "Shoes",
-      description:
-        "Step into a world of luxury footwear that merges comfort and sophistication.",
-    },
-  },
-  {
-    id: 20,
-    image:
-      "https://timekeeper.global/wp-content/uploads/2022/11/LHK_3518-low-light.jpg",
-    brand: "TimeMaster",
-    model: "Modern Chronograph",
-    name: "Contemporary chronograph watch with a bold design.",
-    colors: ["Black", "Red"],
-    price: 280,
-    discount: 0.8,
-    rating: 4.3,
-    category: {
-      id: 3,
-      title: "Watches",
-      description:
-        "Embrace the art of horology with our selection of exquisite timepieces.",
-    },
-  },
-  {
-    id: 21,
-    image:
-      "https://timekeeper.global/wp-content/uploads/2022/11/LHK_3518-low-light.jpg",
-    brand: "EleganceTime",
-    model: "Classic Leather Watch",
-    name: "Timeless leather watch with a touch of elegance.",
-    colors: ["Brown", "Gold"],
-    price: 260,
-    discount: 0,
-    rating: 4.7,
-    category: {
-      id: 3,
-      title: "Watches",
-      description:
-        "Embrace the art of horology with our selection of exquisite timepieces.",
-    },
-  },
-  {
-    id: 22,
-    image:
-      "https://www.thefashionspot.com/wp-content/uploads/sites/11/gallery/10-luxury-bags-to-save-up-for/celine-16.jpg",
-    brand: "LuxuryBrand",
-    model: "Elegant Leather Bag",
-    name: "Classy leather bag for any occasion.",
-    colors: ["Black", "Brown", "Red"],
-    price: 250,
-    discount: 0.2,
-    rating: 4.5,
-    category: {
-      id: 1,
-      title: "Bags",
-      description:
-        "Discover a curated collection of luxury bags that blend style with practicality.",
-    },
-  },
-  {
-    id: 23,
-    image:
-      "https://img.buzzfeed.com/buzzfeed-static/complex/images/Y19jcm9wLGhfMTI0OSx3XzIwMDAseF8wLHlfNDE3/vbxefx0ngnrreoiih1kj/air-jordan-1-homage-to-home-861428-061-pair.jpg?output-format=jpg&output-quality=auto",
-    brand: "SneakPeak",
-    model: "Urban Street Sneakers",
-    name: "Trendy sneakers designed for city life.",
-    colors: ["White", "Black", "Gray"],
-    price: 120,
-    discount: 0,
-    rating: 4.2,
-    category: {
-      id: 2,
-      title: "Shoes",
-      description:
-        "Step into a world of luxury footwear that merges comfort and sophistication.",
-    },
-  },
-  {
-    id: 24,
-    image:
-      "https://timekeeper.global/wp-content/uploads/2022/11/LHK_3518-low-light.jpg",
-    brand: "TimeMaster",
-    model: "Chrono Classic Watch",
-    name: "Sophisticated watch with chronograph features.",
-    colors: ["Silver", "Gold", "Black"],
-    price: 350,
-    discount: 0,
-    rating: 4.8,
-    category: {
-      id: 3,
-      title: "Watches",
-      description:
-        "Embrace the art of horology with our selection of exquisite timepieces.",
-    },
-  },
-  {
-    id: 25,
-    image:
-      "https://timekeeper.global/wp-content/uploads/2022/11/LHK_3518-low-light.jpg",
-    brand: "TimeMaster",
-    model: "Minimalist Quartz Watch",
-    name: "Elegant and simple quartz watch for everyday wear.",
-    colors: ["Silver", "Rose Gold"],
-    price: 150,
-    discount: 0.1,
-    rating: 4.7,
-    category: {
-      id: 3,
-      title: "Watches",
-      description:
-        "Embrace the art of horology with our selection of exquisite timepieces.",
-    },
-  },
-  {
-    id: 26,
-    image:
-      "https://darethcolburn.com/cdn/shop/products/JE-4230-S-1.jpg?v=1618431485",
-    brand: "JewelCraft",
-    model: "Pearl Drop Earrings",
-    name: "Graceful pearl earrings for elegant evenings.",
-    colors: ["White", "Silver"],
-    price: 180,
-    discount: 0,
-    rating: 4.7,
-    category: {
-      id: 4,
-      title: "Jewerly",
-      description:
-        "Elevate your personal style with our range of exquisite jewelry and accessories.",
-    },
-  },
-  {
-    id: 27,
-    image:
-      "https://www.thefashionspot.com/wp-content/uploads/sites/11/gallery/10-luxury-bags-to-save-up-for/celine-16.jpg",
-    brand: "LuxuryBrand",
-    model: "Leather Document Holder",
-    name: "Sleek leather holder for important documents.",
-    colors: ["Black", "Brown"],
-    price: 180,
-    discount: 0,
-    rating: 4.2,
-    category: {
-      id: 1,
-      title: "Bags",
-      description:
-        "Discover a curated collection of luxury bags that blend style with practicality.",
-    },
-  },
-  {
-    id: 28,
-    image:
-      "https://timekeeper.global/wp-content/uploads/2022/11/LHK_3518-low-light.jpg",
-    brand: "TimeMaster",
-    model: "Modern Chronograph",
-    name: "Contemporary chronograph watch with a bold design.",
-    colors: ["Black", "Red"],
-    price: 280,
-    discount: 0,
-    rating: 4.3,
-    category: {
-      id: 3,
-      title: "Watches",
-      description:
-        "Embrace the art of horology with our selection of exquisite timepieces.",
-    },
-  },
-  {
-    id: 29,
-    image:
-      "https://img.buzzfeed.com/buzzfeed-static/complex/images/Y19jcm9wLGhfMTI0OSx3XzIwMDAseF8wLHlfNDE3/vbxefx0ngnrreoiih1kj/air-jordan-1-homage-to-home-861428-061-pair.jpg?output-format=jpg&output-quality=auto",
-    brand: "FootFlex",
-    model: "Running Sneakers",
-    name: "Flexible sneakers designed for running.",
-    colors: ["Gray", "Blue"],
-    price: 110,
-    discount: 0.3,
-    rating: 4.2,
-    category: {
-      id: 2,
-      title: "Shoes",
-      description:
-        "Step into a world of luxury footwear that merges comfort and sophistication.",
-    },
-  },
-  {
-    id: 30,
-    image:
-      "https://darethcolburn.com/cdn/shop/products/JE-4230-S-1.jpg?v=1618431485",
-    brand: "GemGlow",
-    model: "Crystal Drop Necklace",
-    name: "Radiant crystal necklace for a glamorous look.",
-    colors: ["Silver", "Clear"],
-    price: 280,
-    discount: 0.1,
-    rating: 4.5,
-    category: {
-      id: 4,
-      title: "Jewerly",
-      description:
-        "Elevate your personal style with our range of exquisite jewelry and accessories.",
-    },
-  },
-  {
-    id: 31,
-    image:
-      "https://timekeeper.global/wp-content/uploads/2022/11/LHK_3518-low-light.jpg",
-    brand: "ElegantWrist",
-    model: "Elegant Mesh Watch",
-    name: "Sophisticated mesh watch for formal occasions.",
-    colors: ["Silver", "Rose Gold"],
-    price: 290,
-    discount: 0,
-    rating: 4.8,
-    category: {
-      id: 3,
-      title: "Watches",
-      description:
-        "Embrace the art of horology with our selection of exquisite timepieces.",
-    },
-  },
-  {
-    id: 32,
-    image:
-      "https://timekeeper.global/wp-content/uploads/2022/11/LHK_3518-low-light.jpg",
-    brand: "PrecisionTime",
-    model: "Dressy Quartz Watch",
-    name: "Precision-engineered quartz watch with a dressy look.",
-    colors: ["Black", "Gold"],
-    price: 180,
-    discount: 0,
-    rating: 4.6,
-    category: {
-      id: 3,
-      title: "Watches",
-      description:
-        "Embrace the art of horology with our selection of exquisite timepieces.",
-    },
-  },
-  {
-    id: 33,
-    image:
-      "https://www.thefashionspot.com/wp-content/uploads/sites/11/gallery/10-luxury-bags-to-save-up-for/celine-16.jpg",
-    brand: "UrbanChic",
-    model: "Stylish Crossbody Bag",
-    name: "Chic crossbody bag for urban fashionistas.",
-    colors: ["Black", "Pink"],
-    price: 180,
-    discount: 0,
-    rating: 4.6,
-    category: {
-      id: 1,
-      title: "Bags",
-      description:
-        "Discover a curated collection of luxury bags that blend style with practicality.",
-    },
-  },
-  {
-    id: 34,
-    image:
-      "https://darethcolburn.com/cdn/shop/products/JE-4230-S-1.jpg?v=1618431485",
-    brand: "GemGlow",
-    model: "Crystal Drop Necklace",
-    name: "Radiant crystal necklace for a glamorous look.",
-    colors: ["Silver", "Clear"],
-    price: 280,
-    discount: 0.1,
-    rating: 4.5,
-    category: {
-      id: 4,
-      title: "Jewerly",
-      description:
-        "Elevate your personal style with our range of exquisite jewelry and accessories.",
-    },
-  },
-  {
-    id: 35,
-    image:
-      "https://www.thefashionspot.com/wp-content/uploads/sites/11/gallery/10-luxury-bags-to-save-up-for/celine-16.jpg",
-    brand: "CasualCarry",
-    model: "Casual Canvas Backpack",
-    name: "Relaxed canvas backpack for everyday use.",
-    colors: ["Navy", "Gray"],
-    price: 120,
-    discount: 0.15,
-    rating: 4.1,
-    category: {
-      id: 1,
-      title: "Bags",
-      description:
-        "Discover a curated collection of luxury bags that blend style with practicality.",
-    },
-  },
-  {
-    id: 36,
-    image:
-      "https://timekeeper.global/wp-content/uploads/2022/11/LHK_3518-low-light.jpg",
-    brand: "EleganceTime",
-    model: "Classic Leather Watch",
-    name: "Timeless leather watch with a touch of elegance.",
-    colors: ["Brown", "Gold"],
-    price: 260,
-    discount: 0,
-    rating: 4.7,
-    category: {
-      id: 3,
-      title: "Watches",
-      description:
-        "Embrace the art of horology with our selection of exquisite timepieces.",
-    },
-  },
-  {
-    id: 37,
-    image:
-      "https://img.buzzfeed.com/buzzfeed-static/complex/images/Y19jcm9wLGhfMTI0OSx3XzIwMDAseF8wLHlfNDE3/vbxefx0ngnrreoiih1kj/air-jordan-1-homage-to-home-861428-061-pair.jpg?output-format=jpg&output-quality=auto",
-    brand: "ModernSteps",
-    model: "Modern Urban Sneakers",
-    name: "Contemporary sneakers with an urban edge.",
-    colors: ["White", "Black"],
-    price: 130,
-    discount: 0.2,
-    rating: 4.3,
-    category: {
-      id: 2,
-      title: "Shoes",
-      description:
-        "Step into a world of luxury footwear that merges comfort and sophistication.",
-    },
-  },
-  {
-    id: 38,
-    image:
-      "https://darethcolburn.com/cdn/shop/products/JE-4230-S-1.jpg?v=1618431485",
-    brand: "GemGlow",
-    model: "Sapphire Halo Earrings",
-    name: "Dazzling sapphire earrings with a halo of diamonds.",
-    colors: ["Blue", "Silver"],
-    price: 380,
-    discount: 0,
-    rating: 4.9,
-    category: {
-      id: 4,
-      title: "Jewerly",
-      description:
-        "Elevate your personal style with our range of exquisite jewelry and accessories.",
-    },
-  },
-  {
-    id: 39,
-    image:
-      "https://img.buzzfeed.com/buzzfeed-static/complex/images/Y19jcm9wLGhfMTI0OSx3XzIwMDAseF8wLHlfNDE3/vbxefx0ngnrreoiih1kj/air-jordan-1-homage-to-home-861428-061-pair.jpg?output-format=jpg&output-quality=auto",
-    brand: "ActiveStride",
-    model: "Athletic Training Sneakers",
-    name: "Versatile sneakers designed for active training.",
-    colors: ["Black", "Red"],
-    price: 140,
-    discount: 0,
-    rating: 4.4,
-    category: {
-      id: 2,
-      title: "Shoes",
-      description:
-        "Step into a world of luxury footwear that merges comfort and sophistication.",
-    },
-  },
-  {
-    id: 40,
-    image:
-      "https://img.buzzfeed.com/buzzfeed-static/complex/images/Y19jcm9wLGhfMTI0OSx3XzIwMDAseF8wLHlfNDE3/vbxefx0ngnrreoiih1kj/air-jordan-1-homage-to-home-861428-061-pair.jpg?output-format=jpg&output-quality=auto",
-    brand: "SneakPeak",
-    model: "Athleisure Sneakers",
-    name: "Versatile sneakers combining athletic and leisure style.",
-    colors: ["White", "Blue"],
-    price: 130,
-    discount: 0,
-    rating: 4.4,
-    category: {
-      id: 2,
-      title: "Shoes",
-      description:
-        "Step into a world of luxury footwear that merges comfort and sophistication.",
-    },
-  },
-  {
-    id: 41,
-    image:
-      "https://timekeeper.global/wp-content/uploads/2022/11/LHK_3518-low-light.jpg",
-    brand: "TimeMaster",
-    model: "Modern Chronograph",
-    name: "Contemporary chronograph watch with a bold design.",
-    colors: ["Black", "Red"],
-    price: 280,
-    discount: 0.8,
-    rating: 4.3,
-    category: {
-      id: 3,
-      title: "Watches",
-      description:
-        "Embrace the art of horology with our selection of exquisite timepieces.",
-    },
-  },
-  {
-    id: 42,
-    image:
-      "https://timekeeper.global/wp-content/uploads/2022/11/LHK_3518-low-light.jpg",
-    brand: "EleganceTime",
-    model: "Classic Leather Watch",
-    name: "Timeless leather watch with a touch of elegance.",
-    colors: ["Brown", "Gold"],
-    price: 260,
-    discount: 0,
-    rating: 4.7,
-    category: {
-      id: 3,
-      title: "Watches",
-      description:
-        "Embrace the art of horology with our selection of exquisite timepieces.",
-    },
+      "https://img.stadiumgoods.com/adidas-yeezy-yeezy-boost-700-mnvn-blue-tint_17043887_43025717_2048.jpg",
   },
 ];

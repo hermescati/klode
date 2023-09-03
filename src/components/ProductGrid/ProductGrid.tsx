@@ -15,17 +15,14 @@ interface Props {
 const ProductGrid = ({ productQuery, onClick }: Props) => {
   const { data } = useProducts(productQuery);
 
-  const productsPerRow = 4;
-  const initialRowCount = 5;
-  const initialProductCount = productsPerRow * initialRowCount;
+  const initialProductCount = 20;
 
   const [visibleProducts, setVisibleProducts] = useState(
     data.slice(0, initialProductCount)
   );
 
   const loadMoreProducts = () => {
-    const newProductCount =
-      visibleProducts.length + productsPerRow * initialRowCount;
+    const newProductCount = visibleProducts.length + initialProductCount;
 
     const newVisibleProducts = data.slice(0, newProductCount);
     setVisibleProducts(newVisibleProducts);
@@ -51,7 +48,7 @@ const ProductGrid = ({ productQuery, onClick }: Props) => {
           <div className="card-grid">
             {visibleProducts.map((product) => (
               <ProductCard
-                key={product.id}
+                key={product.sku}
                 product={product}
                 onClick={onClick}
               />

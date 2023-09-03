@@ -76,5 +76,6 @@
   font-family: var(--quicksand);
   font-size: 0.75rem;
   font-weight: 600;
+  text-transform: capitalize;
   transition: 0.2s ease-in-out;
 }
