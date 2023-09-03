@@ -39,19 +39,15 @@ const ProductCard = ({ product, onClick }: Props) => {
           </div>
           <div className="card-cta">
             {wishlistFilled ? (
-              <div className="card-cta show">
-                <AiFillHeart
-                  className="wishlist-icon"
-                  onClick={handleWishlistClick}
-                />
-              </div>
+              <AiFillHeart
+                className="wishlist-icon"
+                onClick={handleWishlistClick}
+              />
             ) : (
-              <div className="card-cta hidden">
-                <AiOutlineHeart
-                  className="wishlist-icon"
-                  onClick={handleWishlistClick}
-                />
-              </div>
+              <AiOutlineHeart
+                className="wishlist-icon"
+                onClick={handleWishlistClick}
+              />
             )}
           </div>
         </div>

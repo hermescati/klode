@@ -15,7 +15,7 @@ interface Props {
 const ProductGrid = ({ productQuery, onClick }: Props) => {
   const { data } = useProducts(productQuery);
 
-  const initialProductCount = 2;
+  const initialProductCount = 20;
 
   const [visibleProducts, setVisibleProducts] = useState(
     data.slice(0, initialProductCount)
