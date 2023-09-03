@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import "./RangeSlider.css";
@@ -6,11 +6,16 @@ import "./RangeSlider.css";
 interface Props {
   min: number;
   max: number;
+  range: [number, number];
   onChange: (value: [number, number]) => void;
 }
 
-const RangeSlider = ({ min, max, onChange }: Props) => {
+const RangeSlider = ({ min, max, range, onChange }: Props) => {
   const [values, setValues] = useState<[number, number]>([min, max]);
+
+  useEffect(() => {
+    setValues(range);
+  }, [range]);
 
   const handleMinInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newMin = parseInt(event.target.value);
@@ -46,8 +51,7 @@ const RangeSlider = ({ min, max, onChange }: Props) => {
   return (
     <>
       <div>
-        <div className="slider-container">
-          <h3 className="slider-heading">Price Range</h3>
+        <div className="slider-wrapper">
           <Slider
             range
             min={min}
@@ -64,21 +68,22 @@ const RangeSlider = ({ min, max, onChange }: Props) => {
             pushable
             dotStyle={{
               height: 4,
+              marginLeft: -8,
               width: 4,
               borderColor: "#38557B",
             }}
             trackStyle={{
               marginTop: 1,
-              marginLeft: -6,
               borderRadius: 4,
               backgroundColor: "#38557B",
               height: 6,
             }}
             railStyle={{
-              marginLeft: -4,
+              marginLeft: -16,
               borderRadius: 4,
               backgroundColor: "#EBEEF2",
               height: 8,
+              width: 220,
             }}
             handleStyle={{
               marginLeft: -6,
@@ -92,8 +97,8 @@ const RangeSlider = ({ min, max, onChange }: Props) => {
             }}
           />
         </div>
-        <div className="slider-fields">
-          <div className="col">
+        <div className="slider-container">
+          <div className="slider-field">
             <label className="input-field-label">Min. Price ($)</label>
             <input
               type="number"
@@ -103,7 +108,7 @@ const RangeSlider = ({ min, max, onChange }: Props) => {
               onChange={handleMinInputChange}
             />
           </div>
-          <div className="col">
+          <div className="slider-field">
             <label className="input-field-label">Max. Price ($)</label>
             <input
               type="number"

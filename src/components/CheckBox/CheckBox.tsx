@@ -3,10 +3,11 @@ import "./CheckBox.css";
 
 interface Props {
   text: string;
+  checked: boolean;
   onChange: (isChecked: boolean, text: string) => void;
 }
 
-const CheckBox = ({ text, onChange }: Props) => {
+const CheckBox = ({ text, checked, onChange }: Props) => {
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.checked, text);
   };
@@ -19,6 +20,7 @@ const CheckBox = ({ text, onChange }: Props) => {
             type="checkbox"
             className="checkbox-input"
             onChange={handleOnChange}
+            checked={checked}
           />
           <span className="checkbox-tile">
             <span className="checkbox-label">{text}</span>

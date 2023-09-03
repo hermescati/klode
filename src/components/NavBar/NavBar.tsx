@@ -1,20 +1,19 @@
 import { useState } from "react";
 import { BsFillPersonFill } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
-import useCategories, { Category } from "../../hooks/useCategories";
 import { Product } from "../../hooks/useProducts";
 import Cart from "../Cart";
 import "./NavBar.css";
 
 interface Props {
   products: Product[];
-  selectedCategory: Category | null;
-  onSelectCategory: (category: Category) => void;
+  // selectedCategory: Category | null;
+  // onSelectCategory: (category: Category) => void;
 }
 
-const NavBar = ({ selectedCategory, products, onSelectCategory }: Props) => {
+const NavBar = ({ products }: Props) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { data } = useCategories();
+  // const { data } = useCategories();
 
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen);
@@ -35,7 +34,7 @@ const NavBar = ({ selectedCategory, products, onSelectCategory }: Props) => {
           }
         >
           <hr className="navbar-divider"></hr>
-          {data.map((category) => (
+          {/* {data.map((category) => (
             <li className="navbar-links" key={category.id}>
               <a
                 className={`navbar-links-item + ${
@@ -46,7 +45,7 @@ const NavBar = ({ selectedCategory, products, onSelectCategory }: Props) => {
                 {category.title}
               </a>
             </li>
-          ))}
+          ))} */}
         </ul>
         <div
           className={

@@ -6,6 +6,7 @@
 
 .card-image-wrapper {
   position: relative;
+  cursor: pointer;
   transition: all 0.3s ease-in-out;
 
   &:hover {
@@ -15,26 +16,37 @@
 
 .card-badge {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 0.5rem;
+  left: 0.5rem;
 }
 
 .card-cta {
   position: absolute;
-  display: none;
-  right: 1rem;
-  bottom: 1rem;
-  transition: all 0.3s ease-in-out;
+  right: 0.25rem;
+  bottom: 0.25rem;
 }
 
-.card-image-wrapper:hover .card-cta {
+.wishlist-icon {
+  font-size: 1.5rem;
+  stroke-width: 1.5rem;
+  animation: popUpAnimation 0.5s ease-in;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.card-image-wrapper:hover .hidden {
   display: block;
 }
 
 .card-image {
   overflow: hidden;
-  aspect-ratio: 1 / 1;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
 }
 
 .card-image img {
@@ -60,13 +72,13 @@
 
 .card-container span {
   color: var(--color-400);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 600;
 }
 
 .card-container h2 {
   color: var(--color-800);
-  font-size: 0.99rem;
+  font-size: 1.1rem;
   font-weight: 700;
 }
 
