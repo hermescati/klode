@@ -4,9 +4,10 @@ import "./SearchBar.css";
 
 interface Props {
   onSearch: (searchText: string) => void;
+  placeholder?: string;
 }
 
-const SearchBar = ({ onSearch }: Props) => {
+const SearchBar = ({ onSearch, placeholder = "" }: Props) => {
   const ref = useRef<HTMLInputElement>(null);
 
   return (
@@ -18,13 +19,13 @@ const SearchBar = ({ onSearch }: Props) => {
           if (ref.current) onSearch(ref.current.value);
         }}
       >
-        <RiSearch2Fill color="#9DA8B8" size="24"></RiSearch2Fill>
         <input
           ref={ref}
           className="search-input"
           type="text"
-          placeholder="Search (name, keywords)"
+          placeholder={placeholder}
         />
+        <RiSearch2Fill color="#9DA8B8" size="20"></RiSearch2Fill>
       </form>
     </>
   );

@@ -25,7 +25,7 @@ const ProductCard = ({ product, onClick }: Props) => {
 
   return (
     <>
-      <div className="card">
+      <div className="card" onClick={handleOnClick}>
         <div className="card-image-wrapper">
           <div className="card-image">
             <img src={product.image} alt={product.nickname} />
