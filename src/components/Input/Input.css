@@ -1,0 +1,37 @@
+.input-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.input-label {
+  color: var(--color-700);
+  font-family: var(--quicksand);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.input-field {
+  padding: 0.4rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-50);
+  border: 0.125rem solid var(--color-200);
+  color: var(--color-300);
+  font-family: var(--quicksand);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.input-field:disabled {
+  opacity: 0.5;
+}
+
+.input-field:not(:disabled):hover,
+.input-field:not(:disabled):focus {
+  outline: 0;
+  border: 0.125rem solid var(--color-400);
+}
+
+.input-field::placeholder {
+  color: var(--color-300);
+}
