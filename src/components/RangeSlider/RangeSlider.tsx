@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import "./RangeSlider.css";
+import Input from "../Input";
 
 interface Props {
   min: number;
@@ -17,16 +18,16 @@ const RangeSlider = ({ min, max, range, onChange }: Props) => {
     setValues(range);
   }, [range]);
 
-  const handleMinInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newMin = parseInt(event.target.value);
+  const handleMinInputChange = (newValue: string) => {
+    const newMin = parseInt(newValue);
     if (!isNaN(newMin)) {
       setValues([newMin, values[1]]);
       onChange([newMin, values[1]]);
     }
   };
 
-  const handleMaxInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newMax = parseInt(event.target.value);
+  const handleMaxInputChange = (newValue: string) => {
+    const newMax = parseInt(newValue);
     if (!isNaN(newMax)) {
       setValues([values[0], newMax]);
       onChange([values[0], newMax]);
@@ -98,26 +99,20 @@ const RangeSlider = ({ min, max, range, onChange }: Props) => {
           />
         </div>
         <div className="slider-container">
-          <div className="slider-field">
-            <label className="input-field-label">Min. Price ($)</label>
-            <input
-              type="number"
-              className="input-field"
-              value={values[0]}
-              placeholder={min.toString()}
-              onChange={handleMinInputChange}
-            />
-          </div>
-          <div className="slider-field">
-            <label className="input-field-label">Max. Price ($)</label>
-            <input
-              type="number"
-              className="input-field"
-              value={values[1]}
-              placeholder={max.toString()}
-              onChange={handleMaxInputChange}
-            />
-          </div>
+          <Input
+            label="Min. Price ($)"
+            type="number"
+            placeholder={min.toString()}
+            value={values[0]}
+            onChange={handleMinInputChange}
+          />
+          <Input
+            label="Max. Price ($)"
+            type="number"
+            placeholder={max.toString()}
+            value={values[1]}
+            onChange={handleMaxInputChange}
+          />
         </div>
       </div>
     </>

@@ -73,10 +73,9 @@ function App() {
       )}
       <NavBar
         products={selectedProducts}
-        // selectedCategory={productQuery.category}
-        // onSelectCategory={(category) =>
-        //   setProductQuery({ ...productQuery, category })
-        // }
+        onSearch={(searchText) => {
+          setProductQuery({ ...productQuery, searchText });
+        }}
       />
       <div className="main-container">
         <div className="filter-column">

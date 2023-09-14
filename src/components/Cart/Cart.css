@@ -1,38 +1,19 @@
 .shopping-cart {
-  position: relative;
-  height: 1.5rem;
-  width: 1.5rem;
-}
-
-.notification-dot {
-  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  top: -0.5rem;
-  right: -0.5rem;
-  width: 1.125rem;
-  height: 1.125rem;
-  border-radius: 1.125rem;
-  background-color: var(--color-danger);
-  color: var(--color-50);
-  font-family: var(--quicksand);
-  font-size: 0.7rem;
-  font-weight: 500;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: var(--color-800);
   animation: popUpAnimation 0.3s ease-in-out;
 }
 
-@keyframes popUpAnimation {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+.item-count {
+  color: var(--color-50);
+  font-family: var(--quicksand);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 0%;
+  transform: all 0.3s ease-in-out;
 }
